@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.1.0-blueviolet" alt="Version">
+  <img src="https://img.shields.io/badge/version-1.1.0-blueviolet" alt="Version">
   <img src="https://img.shields.io/badge/license-MIT-purple" alt="License">
   <img src="https://img.shields.io/badge/built_with-SvelteKit-orange" alt="Built with SvelteKit">
   <img src="https://img.shields.io/badge/styling-TailwindCSS%20v4.1-blue" alt="Tailwind CSS">

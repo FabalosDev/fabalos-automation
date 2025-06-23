@@ -19,8 +19,3 @@
   <CTA />
 </main>
 <Footer />
-
-
-<h1 style="font-family: 'Comic Sans', sans-serif; font-weight: 700;">
-  THIS IS SATOSHI
-</h1>

@@ -7,9 +7,9 @@ and adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-# 📦 Change Log — v1.0.0: Fabalos Launch
+# 📦 Change Log — v1.1.0: Fabalos Launch
 
-**Version:** `1.0.0`  
+**Version:** `1.1.0`  
 **Date:** `2025-06-21`  
 **Status:** ✅ Stable & Deploy-Ready  
 **Description:** First public-ready release of the **Fabalos Automation Portfolio**. Modular, styled, and emotionally coded.
