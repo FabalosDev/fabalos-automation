@@ -1,6 +1,3 @@
-<!-- ============================= -->
-<!-- ✨ About Section: Fabalos Automation -->
-<!-- ============================= -->
 <svelte:head>
   <title>What is Fabalos Automation?</title>
   <meta name="description" content="A one-man automation powerhouse blending system logic with soul. Discover the mission behind Fabalos." />
@@ -10,29 +7,31 @@
   <meta name="keywords" content="Fabalos, automation architect, systems design, Make.com, n8n, GPT, solopreneur tech" />
 </svelte:head>
 
+<!-- 🧠 About Section -->
 <section id="about" class="section bg-surface text-main">
   <div class="container stack space-y-6">
-    <!-- 🧠 Headline -->
+
+    <!-- 🔹 Section Title -->
     <h2 class="text-3xl md:text-4xl font-heading text-primary">
       What is Fabalos Automation?
     </h2>
 
-    <!-- 🛠️ Core Description -->
-    <p class="text-lg leading-relaxed text-soft">
+    <!-- 🔸 Core Description -->
+    <p class="text-lg leading-relaxed" style="color: rgba(255, 255, 255, 0.9);">
       Fabalos Automation is a one-man powerhouse focused on building smart, resilient systems that work for you.
       I use tools like <strong>Make.com</strong>, <strong>GPT</strong>, and <strong>n8n</strong> to automate the work that slows you down.
     </p>
 
-    <!-- 🔧 Value Statement -->
-    <p class="text-soft leading-relaxed">
+    <!-- 🔸 Value Proposition -->
+    <p class="leading-relaxed" style="color: rgba(255, 255, 255, 0.9);">
       Whether it's product tagging, workflow optimization, or full system orchestration —  
       I build scalable solutions with clarity, purpose, and soul.  
       <br><br>
       <em>This isn’t just a job — it’s my destiny.</em>
     </p>
 
-    <!-- 🌌 Personal Origin Line -->
-    <p class="italic text-soft text-base">
+    <!-- 🔸 Personal Origin -->
+    <p class="italic text-base" style="color: rgba(255, 255, 255, 0.9);">
       I'm a Mechatronics engineer turned automation architect, focused on blending system logic with elegant user experiences.  
       Everything here is crafted with intention and a bit of stardust.
     </p>

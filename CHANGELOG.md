@@ -1,87 +1,84 @@
-# Changelog
+# 📦 Changelog
 
-All notable changes to this template are documented here.
-
-This project follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)  
-and adheres to [Semantic Versioning](https://semver.org/).
+All notable changes to **Fabalos.com** are documented here.  
+This project follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+<<<<<<< HEAD
 # 📦 Change Log — v1.1.0: Fabalos Launch
 
 **Version:** `1.1.0`  
 **Date:** `2025-06-21`  
+=======
+## [1.2.0] – 2025-07-05  
+**Title:** Case Study Cleanup & Metadata Tools Integration  
+>>>>>>> d80d102 (🔖 v1.2.0 – Case Study cleanup + FabaMeta tools + README polish)
 **Status:** ✅ Stable & Deploy-Ready  
-**Description:** First public-ready release of the **Fabalos Automation Portfolio**. Modular, styled, and emotionally coded.
+
+### ✨ Added
+- 🏷️ `FabaMeta` command-line tools for asset metadata injection:
+  - `faba-meta-make.cmd` – Make.com image assets
+  - `faba-meta-furball.cmd` – The Purple Furball case study images
+  - `faba-meta-foxther.cmd` – Official Foxther brand visuals
+
+### 🔥 Removed
+- ❌ `PromptForm` GPT demo component and lazy-load logic
+- ❌ Case study Card 2 and the "Prompt-to-Response Flow" section
+- ❌ Two-column grid layout (now replaced with single full-page case)
+
+### 🎨 Updated
+- ✏️ Case Studies page now focuses exclusively on Make.com product tagging
+- 🌈 Text contrast improved using `rgba(255, 255, 255, 0.9)` for better readability
+
+### 🧠 Notes
+- Prompt demo is fully removed from production
+- `FabaMeta` tools are local-use only (manual EXIF injection with ExifTool)
 
 ---
 
-## ✅ Features
+## [1.1.0] – 2025-06-21  
+**Title:** Fabalos Launch  
+**Status:** ✅ Stable & Deploy-Ready  
 
-- 🌐 **Homepage Hero** with logo, call-to-actions, and responsive layout  
-- 🧠 **About Section** explaining Fabalos Automation purpose  
-- ⚙️ **Case Study Cards** layout (1 active, expandable)  
-- 📬 **Email CTA Section**: “Let’s Talk” with styled buttons  
-- 📱 **Responsive Navigation** with mobile hamburger + slide-in  
-- 🖌️ **Tailwind CSS v4** architecture with modular styles (`layout.css`, `theme.css`, `global.css`)  
-- 🧪 **Utility class setup**: `bg-primary`, `text-soft`, `btn-primary`, `btn-ghost`, etc.  
-- 💻 **VS Code + Git integration**: proper encoding, profile scripting (`fabagreet`, `fabaclean`)  
+### ✅ Features
+- 🌐 Homepage Hero with logo, call-to-actions, and responsive layout  
+- 🧠 About section explaining Fabalos Automation purpose  
+- ⚙️ Case Study Cards layout (1 active, expandable)  
+- 📬 Email CTA section: “Let’s Talk” with styled buttons  
+- 📱 Responsive navigation with mobile hamburger + slide-in  
+- 🖌️ Tailwind CSS v4 structure with modular layers (`layout.css`, `theme.css`, `global.css`)  
+- 🧪 Utility class setup: `bg-primary`, `text-soft`, `btn-primary`, etc.  
+- 💻 VS Code + Git integration: encoding fixes, shell shortcuts (`fabagreet`, `fabaclean`)  
 
----
+### 🧰 Technical Fixes
+- ✅ Fixed `border-primary` utility issue  
+- ✅ Removed recursive import loop in `theme.css`  
+- ✅ Patched `chcp` encoding bug in PowerShell profile  
+- ✅ Ensured emoji rendering in UTF-8 terminal  
+- ✅ Cleaned Vite + Tailwind plugin configs  
 
-## 🧰 Technical Fixes
-
-- ✅ Resolved `border-primary` utility issues  
-- ✅ Removed recursive import loop (`theme.css`)  
-- ✅ Fixed `chcp` encoding bug in PowerShell profile  
-- ✅ Emojis now render in UTF-8 terminal  
-- ✅ Vite + Tailwind plugins cleaned and aligned  
-
----
-
-## 🚧 Known Work-in-Progress
-
-- [ ] Final polish for **Case Study Detail Pages**  
-- [ ] Add **Favicon metadata**  
-- [ ] Add **SEO Metadata** in `<svelte:head>`  
+### 🚧 Work in Progress
+- [ ] Final polish for case study detail pages  
+- [ ] Add favicon metadata  
+- [ ] Add SEO metadata via `<svelte:head>`  
 - [ ] Footer and 404 page  
 - [ ] Blog or journal section (future idea)  
 
 ---
 
-## ⏫ Version Strategy
+## [1.0.0] – 2025-06-23  
+**Title:** Initial Public Release – Fabalos Automation Portfolio  
+**Status:** ✅ Stable & Deploy-Ready  
 
-Using **Semantic Versioning (SemVer)**:  
-`MAJOR.MINOR.PATCH`
+### ✅ Features
+- 🌐 Landing page with SvelteKit and Fabaverse branding  
+- 🧠 Section components: Hero, About, Services  
+- 🖌️ Global CSS with custom palette and typography  
+- 📬 Placeholder for case study route  
+- 📄 README and project metadata  
 
-- `MAJOR`: Breaking changes / new site structure  
-- `MINOR`: New pages or features (e.g., second case study)  
-- `PATCH`: Visual tweaks, bugfixes  
-
-**Next target version:** `1.1.0` = when 2nd case study + metadata polishing is done.
-
----
-
-## 📌 Git Tag (optional)
-After pushing to GitHub:
+### 📌 Git Tag
 ```bash
 git tag -a v1.0.0 -m "🎉 Fabalos v1.0.0 - First public-ready release"
-git push origin v1.0.0
-```
-
-## [0.2.0] - 2025-06-18
-
-### Removed
-- Tailwind v4 CSS-first config established
-- Global styles + layout scaffold complete
-- Section components prepared: Hero, About, Services
-- Removed tailwind.config.js in favor of `@theme` directive
-
-## [0.1.0] – 2025-06-18
-
-### Added
-- Initial landing page structure with SvelteKit
-- Global CSS with custom Fabalos palette + fonts
-- README and project description
-- Placeholder for case study route
-
+git push origin v1.0.
