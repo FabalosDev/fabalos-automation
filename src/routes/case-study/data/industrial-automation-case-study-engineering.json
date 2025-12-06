@@ -1,0 +1,11 @@
+{
+	"title": "Industrial Automation Engineering Projects",
+	"slug": "industrial-automation-case-study-engineering",
+	"summary": "Engineering automation projects for manufacturing, including pneumatics, PLC controls, and robotics.",
+	"problem": "Manual manufacturing systems limited speed and accuracy.",
+	"solution": "Designed full electropneumatic control systems and automated testers.",
+	"result": "Increased productivity and consistency across operations.",
+	"tools": ["Festo", "Siemens", "Engineering Tools"],
+	"tags": ["automation", "engineering", "industrial"],
+	"thumbnail": "/case-thumbs/industrial.png"
+}

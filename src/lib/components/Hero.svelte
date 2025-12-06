@@ -1,47 +1,51 @@
-<!-- 🚀 Hero Section -->
+<script>
+	import TechCarousel from '$lib/components/TechCarousel.svelte';
+</script>
+
 <section id="hero" class="section bg-background text-main">
-  <div class="container grid md:grid-cols-2 items-center gap-12">
+	<div class="container grid items-center gap-12 md:grid-cols-2">
+		<!-- Brand Intro -->
+		<div class="space-y-6">
+			<h1 class="font-heading text-4xl font-bold leading-tight md:text-6xl">Fabalos Automation</h1>
 
-    <!-- 🔹 Left Column -->
-    <div class="space-y-6">
+			<h2 class="text-soft text-xl md:text-2xl">Smart Systems. Clean Logic. Real Results.</h2>
 
-      <!-- 🧠 Headline -->
-      <h1 class="text-4xl md:text-6xl font-heading text-primary leading-tight">
-        <span class="font-bold block md:inline">Automate with</span>
-        <span class="text-soft font-bold">Fabalos</span>
-      </h1>
+			<p class="text-soft text-lg leading-relaxed">
+				I design and build automated workflows using <strong>Make.com</strong>,
+				<strong>n8n</strong>, and <strong>GPT</strong> — removing repetitive work and creating systems
+				that scale with your operations.
+			</p>
 
-      <!-- 🎯 Subheading -->
-      <h2 class="text-xl md:text-2xl text-soft font-semibold">
-        Automation Architect
-      </h2>
+			<!-- Value points -->
+			<ul class="text-soft space-y-2 text-sm md:text-base">
+				<li>• Reduce manual work and errors</li>
+				<li>• Standardize processes with clean automation logic</li>
+				<li>• Integrate tools across your entire workflow</li>
+				<li>• Build scalable automation architectures</li>
+			</ul>
 
-      <!-- 📣 Hero Paragraph -->
-      <p class="text-lg leading-relaxed">
-        I build resilient automation systems using <strong>Make.com</strong>, <strong>GPT</strong>, and <strong>n8n</strong> — 
-        streamlining chaos into beautifully efficient workflows. Whether it’s product tagging, workflow ops, or full system design, 
-        this is <span class="text-primary font-semibold">Fabalos Automation</span>.
-      </p>
+			<!-- CTAs -->
+			<div class="flex flex-wrap gap-4 pt-4">
+				<a href="/case-study" class="btn-solid">
+					<span>Explore Case Studies</span>
+				</a>
+				<a href="mailto:hello@fabalos.com" class="btn-primary">
+					<span>Contact for a Build Session</span>
+				</a>
+			</div>
+		</div>
 
-      <!-- ⚡ CTA Buttons -->
-      <div class="flex flex-wrap gap-4">
-        <a href="#case-study" class="btn-solid">
-          <span>See My Automations</span>
-        </a>
-        <a href="mailto:hello@fabalos.com" class="btn-primary">
-          <span>Let’s Talk</span>
-        </a>
-      </div>
-    </div>
+		<!-- Logo + Carousel Column -->
+		<div class="flex flex-col items-center justify-center gap-6">
+			<!-- Logo -->
+			<img
+				src="/logos/fabalos-logo-2k.png"
+				alt="Fabalos Automation Logo"
+				class="h-auto w-full max-w-[320px] md:max-w-[400px]"
+			/>
 
-    <!-- 🔸 Right Column: Logo -->
-    <div class="flex justify-center md:justify-end">
-      <img
-        src="/logos/fabalos-logo-2k.png"
-        alt="Fabalos Automation Logo Mark"
-        class="w-full max-w-[320px] md:max-w-[400px] h-auto"
-      />
-    </div>
-
-  </div>
+			<!-- Carousel -->
+			<TechCarousel />
+		</div>
+	</div>
 </section>

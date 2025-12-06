@@ -1,0 +1,11 @@
+{
+	"title": "Editorial Automation Dashboard",
+	"slug": "editorial-automation-dashboard-google-sheets",
+	"summary": "Created a real-time editorial monitoring dashboard using Google Sheets.",
+	"problem": "Teams had no visibility into content status or error cases.",
+	"solution": "Built First-Level View dashboard with status columns, tags, UUID tracking, and truth scoring.",
+	"result": "Editors now work 40% faster with a visual command center.",
+	"tools": ["Google Sheets", "GPT", "Make.com"],
+	"tags": ["dashboard", "editorial", "automation"],
+	"thumbnail": "/case-thumbs/dashboard.png"
+}

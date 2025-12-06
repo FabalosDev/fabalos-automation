@@ -1,31 +1,76 @@
-<svelte:head>
-  <title>Case Studies | Fabalos Automation</title>
-  <meta name="description" content="Explore real-world automation solutions — from Make.com routers to GPT-powered tagging flows." />
-  <meta property="og:title" content="Case Studies | Fabalos" />
-  <meta property="og:description" content="Breakdowns of intelligent workflows that simplify business ops. Built with n8n, Make.com, and GPT." />
-  <meta property="og:image" content="/og-case-study.png" />
-  <meta name="keywords" content="Make.com, GPT, automation case study, product tagging, system design, Fabalos" />
-</svelte:head>
+<section id="case-study" class="section bg-background text-main">
+	<div class="stack container">
+		<!-- 🔹 Section Header -->
+		<h2 class="font-heading text-primary text-center text-3xl md:text-4xl">
+			Automation Case Studies
+		</h2>
+		<p class="text-soft mx-auto max-w-2xl text-center text-lg">
+			A look inside the automation architectures I've engineered — designed to remove bottlenecks,
+			reduce manual load, and scale operations with precision.
+		</p>
 
-<!-- 📁 Case Study Highlight -->
-<section id="case-study" class="section bg-surface text-white">
-  <div class="container stack">
+		<!-- 🔸 Grid of Case Studies -->
+		<div class="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2">
+			<!-- 🧠 Case Study 1 -->
+			<div class="bg-surface border-border rounded-xl border p-6 shadow transition hover:shadow-lg">
+				<h3 class="font-heading text-primary mb-3 text-2xl">
+					Product Tagging Automation (Make.com + GPT)
+				</h3>
 
-    <!-- 🔹 Headline -->
-    <h2 class="text-3xl font-heading text-primary">
-      Featured Automation
-    </h2>
+				<p class="text-soft mb-4 leading-relaxed">
+					A fully automated tagging pipeline that replaces manual classification with a hybrid GPT +
+					rules-based model. Built for a fast-scaling media team handling thousands of SKUs.
+				</p>
 
-    <!-- 🔸 Description -->
-    <p class="max-w-2xl text-lg" style="color: rgba(255, 255, 255, 0.9);">
-      Explore how I streamlined product tagging using GPT, Make.com, and Sheets — 
-      turning chaos into clarity. This case study reveals the entire system logic.
-    </p>
+				<ul class="text-soft mb-4 space-y-1 text-sm">
+					<li>✔️ GPT-assisted tagging with fallback logic</li>
+					<li>✔️ Parallel routing for multi-category processing</li>
+					<li>✔️ Google Sheets integration as dynamic control panel</li>
+					<li>✔️ Reduced tagging workload by 90%</li>
+				</ul>
 
-    <!-- 🔗 CTA Button -->
-    <a href="/case-study" rel="noopener" class="btn-silver-hover w-fit">
-      <span>Read Case Study</span>
-    </a>
+				<a
+					href="/images/case-tagging.png"
+					target="_blank"
+					rel="noopener"
+					class="btn-primary inline-flex"
+				>
+					<span>View Workflow</span>
+				</a>
+			</div>
 
-  </div>
+			<!-- 🧠 Case Study 2 -->
+			<div class="bg-surface border-border rounded-xl border p-6 shadow transition hover:shadow-lg">
+				<h3 class="font-heading text-primary mb-3 text-2xl">
+					Instant AI Response System (Tally → n8n)
+				</h3>
+
+				<p class="text-soft mb-4 leading-relaxed">
+					A real-time response generator triggered through a Tally form. Parsed, processed, and
+					returned in seconds — no GPT API required.
+				</p>
+
+				<ul class="text-soft mb-4 space-y-1 text-sm">
+					<li>✔️ Tally form as the input frontend</li>
+					<li>✔️ Webhook → logic engine → response formatter</li>
+					<li>✔️ Dynamic routing for personalized outputs</li>
+					<li>✔️ Deployable on Railway or local tunnel</li>
+				</ul>
+
+				<a
+					href="https://tally.so/r/your-form-id"
+					target="_blank"
+					rel="noopener"
+					class="btn-primary inline-flex"
+				>
+					<span>Try Demo</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="mt-8 text-center">
+		<a href="/case-study" class="btn-solid mt-6 inline-block">
+			<span>View Full Case Study</span>
+		</a>
+	</div>
 </section>

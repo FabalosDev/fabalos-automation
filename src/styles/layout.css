@@ -1,6 +1,7 @@
-/* ===================== layout.css ===================== */
+/* ===================== LAYOUT.CSS ===================== */
+
 @layer utilities {
-  /* Layout */
+  /* Layout Helpers */
   .container { @apply max-w-screen-lg mx-auto px-4 md:px-6 lg:px-8; }
   .section { @apply py-12 md:py-20; }
   .stack { @apply flex flex-col gap-6; }
@@ -8,159 +9,106 @@
   .grid-three { @apply grid grid-cols-1 md:grid-cols-3 gap-8; }
   .center-text { @apply text-center max-w-xl mx-auto; }
 
-  /* Typography */
+  /* Typography utilities */
   .font-heading { font-family: var(--font-heading); }
   .text-main { color: var(--text-main); }
   .text-soft { color: var(--text-soft); }
 
-  /* Backgrounds */
-  .bg-primary { background-color: var(--primary); }
-  .bg-accent { background-color: var(--accent); }
-  .bg-warning { background-color: var(--warning); }
-  .bg-error { background-color: var(--error); }
+  /* Background shortcuts */
   .bg-background { background-color: var(--background); }
   .bg-surface { background-color: var(--surface); }
+  .bg-primary { background-color: var(--primary); }
+  .bg-accent { background-color: var(--accent); }
 
-  /* CTA Block */
+  /* CTA block */
   .cta-block {
     @apply py-12 px-8 text-center rounded-xl;
     background-color: var(--primary);
     color: white;
   }
-  .cta-block h2 {
-    @apply text-2xl md:text-3xl mb-4 font-heading;
-  }
-  .cta-block p {
-    @apply text-base md:text-lg mb-6;
-    color: rgba(255, 255, 255, 0.9);
-  }
 
-  /* Dark Mode Enhancements */
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: var(--surface);
-      color: var(--text-soft);
-    }
-    .cta-block {
-      background-color: var(--surface);
-      color: var(--text-main);
-      border: 1px solid var(--text-soft);
-    }
-    .center-text {
-      color: var(--text-soft);
-    }
-    h1, h2, h3 {
-      font-family: var(--font-heading);
-      color: var(--primary);
-    }
-  }
+  .cta-block h2 { @apply text-2xl md:text-3xl mb-4 font-heading; }
+  .cta-block p { @apply text-base md:text-lg mb-6 text-white/90; }
 }
 
 @layer components {
-  /* --- btn-silver-hover component --- */
-  .btn-silver-hover {
-    @apply relative inline-block px-6 py-3 font-medium rounded-lg border overflow-hidden transition-colors;
-    border-color: var(--primary);
-    color: var(--primary);
-    background-color: transparent;
-  }
 
-  .btn-silver-hover::before {
-    content: '';
-    @apply absolute top-0 left-0 w-full h-full bg-gray-300 scale-x-0 origin-left transition-transform duration-300;
-    z-index: 0;
-  }
+.btn-silver-hover {
+  @apply relative inline-block px-6 py-3 font-medium rounded-lg border overflow-hidden transition-colors;
+  border-color: white;
+  color: white;
+  background-color: transparent;
+}
 
-  .btn-silver-hover:hover::before {
-    @apply scale-x-100;
-  }
+.btn-silver-hover::before {
+  content: "";
+  @apply absolute inset-0 bg-white scale-x-0 origin-left transition-transform duration-300;
+  z-index: 0;
+}
 
-  .btn-silver-hover:hover {
-    color: var(--primary);
-  }
+.btn-silver-hover:hover::before {
+  @apply scale-x-100;
+}
 
-  .btn-silver-hover > span {
-    @apply relative z-10;
-  }
+.btn-silver-hover:hover {
+  color: var(--primary); /* orange text on hover */
+}
 
-  /* --- btn-primary component (consolidated and cleaned) --- */
+.btn-silver-hover span {
+  @apply relative z-10;
+}
+
+
+  /* Outline → Solid Hover */
   .btn-primary {
-    @apply inline-flex items-center justify-center
-           font-medium px-6 py-3 rounded-lg
-           border /* Applies 1px solid border */
-           transition-colors duration-300;
-
-    background-color: transparent;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg border transition-all font-medium;
+    color: var(--primary);
+    border-color: var(--primary);
+    background: transparent;
     position: relative;
     overflow: hidden;
-    z-index: 0;
-
-    border-color: var(--primary); /* Initial blue border */
-    color: var(--primary);        /* Initial blue text */
   }
 
   .btn-primary::before {
-    content: '';
-    @apply absolute top-0 left-0 h-full w-full;
-    background-color: var(--primary); /* Fills with primary blue color on hover */
+    content: "";
+    @apply absolute inset-0;
+    background: var(--primary);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
     z-index: 0;
   }
+  .btn-primary:hover::before { transform: scaleX(1); }
+  .btn-primary:hover { color: white; }
+  .btn-primary span { @apply relative z-10; }
 
-  .btn-primary:hover::before {
-    transform: scaleX(1); /* Expands on hover */
-  }
+/* Solid → Outline Hover */
+.btn-solid {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg transition-all font-medium;
+  background: var(--primary);
+  color: white;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
 
-  .btn-primary:hover {
-    color: white; /* Text turns white on hover */
-  }
+.btn-solid::before {
+  content: "";
+  @apply absolute inset-0 bg-transparent;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
 
-  .btn-primary > span {
-    position: relative;
-    z-index: 10;
-  }
 
-/* --- New: btn-solid component (Updated for solid-to-outline-on-hover with wipe) --- */
-  .btn-solid {
-    @apply inline-flex items-center justify-center
-           font-medium px-6 py-3 rounded-lg
-           border /* Applies default 1px solid border */
-           transition-colors duration-300; /* Handles transitions for background-color, color, and border-color */
+.btn-solid:hover::before { transform: scaleX(1); }
 
-    background-color: var(--primary); /* Initial: Solid primary blue background */
-    color: white; /* Initial: White text */
-    border-color: transparent; /* Initial: No visible border (it's solid) */
+.btn-solid:hover {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
 
-    position: relative; /* Essential for positioning the ::before pseudo-element */
-    overflow: hidden;   /* Hides the ::before element until it wipes in */
-    z-index: 0;
-  }
-
-  .btn-solid::before {
-    content: '';
-    @apply absolute top-0 left-0 h-full w-full;
-    background-color: white; /* This is the "light background" that wipes in on hover */
-    transform: scaleX(0); /* Starts hidden */
-    transform-origin: left; /* Wipes in from the left */
-    transition: transform 0.3s ease; /* Animation for the wipe effect */
-    z-index: 0; /* Ensures the wipe is behind the text */
-  }
-
-  .btn-solid:hover::before {
-    transform: scaleX(1); /* Wipes across to full width on hover */
-  }
-
-  .btn-solid:hover {
-    background-color: transparent; /* On hover: Main background becomes transparent */
-                                  /* (This allows the white ::before to show through) */
-    color: var(--primary); /* On hover: Text becomes blue */
-    border-color: var(--primary); /* On hover: Border becomes blue */
-  }
-
-  .btn-solid > span {
-    position: relative;
-    z-index: 10; /* Ensures the text (inside span) is always on top of the wipe effect */
-  }
+.btn-solid span { @apply relative z-10; }
 }

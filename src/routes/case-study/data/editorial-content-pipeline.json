@@ -1,0 +1,11 @@
+{
+	"title": "Editorial Content Pipeline Automation",
+	"slug": "automation-editorial-content-pipeline",
+	"summary": "Automated multi-step editorial content flow using GPT, Sheets, and structured logic.",
+	"problem": "Editors spent 3–5 minutes per article rewriting descriptions, formatting metadata, and assigning categories.",
+	"solution": "Built a flow that rewrites, cleans, tags, and validates content automatically using GPT + Sheets batch processing.",
+	"result": "Reduced workload by 80%. Editors now review instead of manually rewriting.",
+	"tools": ["GPT", "Google Sheets", "Make.com"],
+	"tags": ["automation", "editorial", "gpt", "content"],
+	"thumbnail": "/case-thumbs/editorial.png"
+}

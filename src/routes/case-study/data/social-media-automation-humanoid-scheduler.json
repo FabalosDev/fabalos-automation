@@ -1,0 +1,11 @@
+{
+	"title": "FabaStealth Social Automation Engine",
+	"slug": "social-media-automation-humanoid-scheduler",
+	"summary": "Irregular human-like scheduler for social posting.",
+	"problem": "Posting patterns looked robotic.",
+	"solution": "Built human-interval posting system with randomized batching.",
+	"result": "Accounts appear natural, increasing engagement.",
+	"tools": ["n8n", "GPT", "Scheduling logic"],
+	"tags": ["social", "automation", "scheduling"],
+	"thumbnail": "/case-thumbs/social.png"
+}

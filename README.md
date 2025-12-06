@@ -1,9 +1,5 @@
 <p align="center">
-<<<<<<< HEAD
-  <img src="https://img.shields.io/badge/version-1.1.0-blueviolet" alt="Version">
-=======
-  <img src="https://img.shields.io/badge/version-1.2.0-blueviolet" alt="Version">
->>>>>>> d80d102 (🔖 v1.2.0 – Case Study cleanup + FabaMeta tools + README polish)
+  <img src="https://img.shields.io/badge/version-1.3.0-blueviolet" alt="Version">
   <img src="https://img.shields.io/badge/license-MIT-purple" alt="License">
   <img src="https://img.shields.io/badge/built_with-SvelteKit-orange" alt="Built with SvelteKit">
   <img src="https://img.shields.io/badge/styling-TailwindCSS%20v4.1-blue" alt="Tailwind CSS">
@@ -11,65 +7,120 @@
   <img src="https://img.shields.io/badge/foxified-yes-ff69b4" alt="Foxified">
 </p>
 
-# 🦊 Fabalos.com
+# 🦊 **Fabalos Automation – Portfolio & Case Study System**
 
-**Professional landing page and automation portfolio built with SvelteKit + TailwindCSS.**
+A modern SvelteKit-based automation portfolio showcasing real-world case studies in **Make.com, n8n, GPT workflows, and system design**.
 
-> The official site of **Fabalos** — a mechatronics engineer turned digital systems architect.  
-> Showcasing automation case studies, tools, and services through clean, modular design.
-
----
-
-## 🚀 Overview
-
-- Automation-first personal brand
-- Tagging case study (Make.com + GPT + Sheets)
-- Scrollable, responsive layout
-- Focused on clarity, flow, and strategy
+This site serves as the official public profile of **Fabalos** — a Mechatronics Engineer turned Automation Architect.
 
 ---
 
-## 🛠️ Stack
+## 🚀 **Overview**
 
-- SvelteKit (frontend)
-- TailwindCSS v4.1 (styling)
-- Make.com + n8n (automation flows)
-- GPT-4 (tagging logic & workflow narration)
-- Obsidian & Notion (project backend)
-
----
-
-## 📄 Pages
-
-| Route         | Description                                 |
-|---------------|---------------------------------------------|
-| `/`           | Hero section, CTA, intro, services           |
-| `/case-study` | Case study: product tagging with GPT & Make |
-| `+`           | (Future) Tools, blog, Foxther lore zone     |
+- Fully redesigned automation portfolio
+- Hero section with animated stack carousel
+- Dynamic case study system (`/case-study/[slug]`)
+- Data-driven structure using JSON
+- Modular components and Foxther-branded theme
+- Clean, responsive layout with dark/light support
 
 ---
 
-## 🧠 Philosophy
+## 🧱 **Project Structure**
 
-Fabalos.com is a place where **clarity meets capability**.  
-Automation isn't just about saving time — it's about designing systems that align with your **energy**, **intent**, and **creative flow**.
+```text
+src/
+ ├─ lib/
+ │   ├─ components/
+ │   ├─ layouts/
+ │   └─ utils/
+ ├─ routes/
+ │   ├─ +page.svelte        → homepage
+ │   ├─ case-study/
+ │   │     ├─ +page.svelte → listing page
+ │   │     └─ [slug]/
+ │   │          └─ +page.svelte → dynamic case pages
+data/
+ └─ case-studies.json       → master dataset
+```
+
+---
+## 🧠 **Case Study System**
+
+All case studies are stored inside:
+
+`/data/case-studies.json`
+
+Each entry contains:
+
+`{   "slug": "make-tagging-automation",   "title": "Make.com + GPT Tagging Automation",   "summary": "Automated product tagging using GPT and Sheets.",   "badge": ["Automation", "AI"],   "image": "/images/case-tagging.png" }`
+
+Pages are generated automatically via `[slug]`.
+
+This allows **12+ professional case studies** without repetitive manual work.
 
 ---
 
-## 🔖 Versioning Strategy
+## 🛠️ **Tech Stack**
 
-This project follows [Semantic Versioning](https://semver.org/):
+- **SvelteKit** — main framework
 
-- `0.x.x` – Development / internal testing
-- `1.0.0` – Initial public release
-- `x.y.z` – Minor/major feature updates or structure changes
-- Patch versions (e.g. `1.2.1`) – Visual fixes, bug patches, small enhancements
+- **TailwindCSS v4.1** — design system
 
-See full release history in [CHANGELOG.md](./CHANGELOG.md)
+- **Make.com + n8n** — automation backend
+
+- **GPT models** — logic narration, flow generation
+
+- **Supabase (optional)** — future DB layer
+
+- **Cloudflare + Vercel** — deployment-ready
+
 
 ---
 
-## 📄 License
+## 📄 **Pages**
 
-**MIT**  
-Use freely. Attribution appreciated. 🦊
+|Route|Description|
+|---|---|
+|`/`|Hero + brand positioning + stack carousel|
+|`/case-study`|Case study gallery (Level 1 public view)|
+|`/case-study/[slug]`|Full deep-dive case study pages|
+|`/projects` _(future)_|Expanded automation portfolio|
+|`/tools` _(future)_|FoxOps internal/external tools|
+
+---
+
+## 🎨 **Branding**
+
+The site uses the **Foxther Theme**, including:
+
+- orange primary
+
+- matte surfaces
+
+- neon-hover buttons
+
+- softened typography
+
+- dark/light system tokens
+
+
+---
+
+## 🔖 **Versioning**
+
+- **1.3.0** — Case study dynamic routing + data model
+
+- **1.2.0** — Components stable + theme cleanup
+
+- **1.0.0** — Public release
+
+
+Full history in `CHANGELOG.md`.
+
+---
+
+## 📜 **License**
+
+**MIT** — free to use, modify, self-host.
+Attribution appreciated. 🦊

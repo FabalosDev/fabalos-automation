@@ -1,0 +1,11 @@
+{
+	"title": "Webflow + GPT Hybrid Content Tagger",
+	"slug": "webflow-gpt-hybrid-content-tagger",
+	"summary": "A dual-layer content tagging model using Webflow CMS + GPT.",
+	"problem": "Tags were inconsistent and manually inputted.",
+	"solution": "Created a hybrid rule-based + GPT scoring system.",
+	"result": "95% tag accuracy within Webflow CMS.",
+	"tools": ["Webflow", "GPT", "Make.com"],
+	"tags": ["tagging", "webflow", "automation"],
+	"thumbnail": "/case-thumbs/hybrid.png"
+}

@@ -1,0 +1,11 @@
+{
+	"title": "Real-Time Chat Simulation (Tally → n8n)",
+	"slug": "realtime-gpt-simulation-tally-n8n",
+	"summary": "Simulates instant GPT responses without using GPT API.",
+	"problem": "Needed an instant-feeling AI reply without LLM cost.",
+	"solution": "Created a string-based simulation logic using n8n expressions.",
+	"result": "Ultra-fast pseudo-AI responses for demos.",
+	"tools": ["n8n", "Tally Forms"],
+	"tags": ["simulation", "ai", "n8n"],
+	"thumbnail": "/case-thumbs/tally.png"
+}

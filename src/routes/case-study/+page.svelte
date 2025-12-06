@@ -1,41 +1,53 @@
 <script>
-  import Footer from '$lib/components/Footer.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	export let data;
+	const studies = data.studies;
 </script>
 
 <svelte:head>
-  <title>Case Studies | Fabalos Automation</title>
-  <meta name="description" content="Explore real-world automation solutions — from Make.com routers to GPT-powered tagging flows." />
-  <meta property="og:title" content="Case Studies | Fabalos" />
-  <meta property="og:description" content="Breakdowns of intelligent workflows that simplify business ops. Built with n8n, Make.com, and GPT." />
-  <meta property="og:image" content="/og-case-study.png" />
-  <meta name="keywords" content="Make.com, GPT, automation case study, product tagging, system design, Fabalos" />
+	<title>Case Studies | Fabalos Automation</title>
+	<meta
+		name="description"
+		content="Explore automation, AI workflows, and RAG systems built by Fabalos."
+	/>
 </svelte:head>
 
 <section class="section bg-background text-main">
-  <div class="container stack text-left">
-    <!-- 🧠 Section Intro -->
-    <h1 class="text-4xl font-heading text-primary mb-4 text-center">Case Study: Make.com Product Tagging</h1>
-    <p class="text-lg max-w-2xl mx-auto text-center" style="color: rgba(255, 255, 255, 0.9);">
-      A real-world automation flow built with purpose — using <strong>Make.com</strong>, <strong>GPT</strong>, and <strong>Google Sheets</strong>.
-    </p>
+	<div class="stack container">
+		<h1 class="font-heading text-primary mb-12 text-center text-4xl">Case Studies</h1>
 
-    <!-- 📌 Case Study -->
-    <div class="mt-12 border border-primary rounded-xl p-6 bg-surface" style="color: rgba(255, 255, 255, 0.9);">
-      <h2 class="text-2xl font-heading text-primary mb-2">Make.com Product Tagging System</h2>
-      <p class="leading-relaxed">
-        A robust metadata tagging pipeline using Google Sheets + GPT via Make.com.  
-        Enabled parallel tagging, intelligent fallback logic, and auto-sorting.  
-        Scalable and designed to remove bottlenecks in high-volume content workflows.
-      </p>
-      <img src="/images/case-tagging1.png" alt="Tagging Case Study Screenshot 1" class="mt-6 rounded shadow" />
-      <img src="/images/case-tagging2.png" alt="Tagging Case Study Screenshot 2" class="mt-6 rounded shadow" />
-    </div>
+		<div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+			{#each studies as study}
+				<a
+					class="bg-surface border-border block rounded-xl border p-6 transition hover:shadow-lg"
+					href={`/case-study/${study.slug}`}
+				>
+					<img
+						src={study.thumbnail}
+						alt={study.title}
+						class="mb-4 h-40 w-full rounded-lg object-cover"
+					/>
 
-    <!-- 🔙 Back -->
-    <div class="mt-12 text-center">
-      <a href="/" class="text-primary hover:underline font-medium">← Back to Home</a>
-    </div>
-  </div>
+					<h2 class="font-heading text-primary mb-2 text-xl">{study.title}</h2>
+					<p class="text-soft mb-4 text-sm">{study.summary}</p>
+
+					<div class="mb-4 flex flex-wrap gap-2">
+						{#each study.tags as tag}
+							<span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs">
+								{tag}
+							</span>
+						{/each}
+					</div>
+
+					<span class="text-primary font-semibold hover:underline"> View Case Study → </span>
+				</a>
+			{/each}
+		</div>
+
+		<!-- Back Button -->
+		<a href="/" class="btn-primary mt-6 w-fit">
+			<span>← Back to Homepage</span>
+		</a>
+	</div>
+	<Footer />
 </section>
-
-<Footer />

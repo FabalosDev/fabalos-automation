@@ -1,0 +1,11 @@
+{
+	"title": "AI Editorial Rewriting Engine",
+	"slug": "editorial-rewriting-engine-gpt-automation",
+	"summary": "A rewriting engine designed for consistent tone and clarity.",
+	"problem": "Inconsistent editorial rewriting style across team members.",
+	"solution": "Created a GPT rewrite engine with strict rules and fallback handling.",
+	"result": "Clean, consistent rewrites across thousands of entries.",
+	"tools": ["GPT", "Google Sheets"],
+	"tags": ["editorial", "rewriting", "gpt"],
+	"thumbnail": "/case-thumbs/rewriting.png"
+}
