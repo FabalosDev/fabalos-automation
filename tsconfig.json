@@ -1,5 +1,5 @@
 {
- "extends": "./tsconfig.paths.json",
+  "extends": ["./.svelte-kit/tsconfig.json", "./tsconfig.paths.json"],
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
@@ -12,13 +12,5 @@
     "moduleResolution": "bundler"
   },
   "include": ["src/**/*"],
-  "exclude": [
-    "node_modules",
-    ".svelte-kit",
-    "dist",
-    "build",
-    "public",
-    "**/*.config.js",
-    "**/*.test.*"
-  ]
+  "exclude": ["node_modules", ".svelte-kit", "dist", "build"]
 }
