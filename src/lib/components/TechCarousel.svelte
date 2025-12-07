@@ -39,12 +39,12 @@
 
 	.carousel-track {
 		display: flex;
-		gap: 3rem;
+		gap: 3rem; /* IMPORTANT — your loop depends on this */
 		width: max-content;
-		animation: scroll 28s linear infinite;
+		animation: scroll 18s linear infinite;
 	}
 
-	/* SEAMLESS INFINITE LOOP — only one keyframes */
+	/* ⭐ KEY: shift by half the duplicated track (50%) minus half the gap */
 	@keyframes scroll {
 		0% {
 			transform: translateX(0);
@@ -57,8 +57,8 @@
 	.icon {
 		height: 40px;
 		width: auto;
-		filter: invert(var(--icon-invert)) brightness(1);
 		opacity: 0.9;
+		filter: invert(var(--icon-invert)) brightness(1);
 		transition:
 			filter 0.3s ease,
 			opacity 0.3s ease;
@@ -68,21 +68,18 @@
 		opacity: 1;
 	}
 
-	/* Light mode → keep normal logos */
 	@media (prefers-color-scheme: light) {
 		:root {
 			--icon-invert: 0;
 		}
 	}
 
-	/* Dark mode → invert to white */
 	@media (prefers-color-scheme: dark) {
 		:root {
 			--icon-invert: 1;
 		}
 	}
 
-	/* Pause on hover */
 	.carousel-wrapper:hover .carousel-track {
 		animation-play-state: paused;
 	}
