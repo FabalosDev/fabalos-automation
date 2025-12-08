@@ -1,30 +1,30 @@
 <svelte:head>
-	<!-- 🌟 MAIN SEO TITLE -->
+	<!-- 🌟 PAGE TITLE -->
 	<title>Fabalos Automation — Smart Systems, Clean Logic, Real Results</title>
 
 	<!-- 🌟 META DESCRIPTION -->
 	<meta
 		name="description"
-		content="Automation Systems Architect specializing in n8n, Make.com, GPT workflows, and scalable backend logic. I design, optimize, and automate business systems that eliminate repetitive work and deliver real operational impact."
+		content="Automation Systems Architect specializing in n8n, Make.com, GPT workflows, backend logic, and business systems design. I automate complex processes to eliminate repetitive work and deliver scalable operational impact."
 	/>
 
 	<!-- 🌟 KEYWORDS -->
 	<meta
 		name="keywords"
-		content="automation engineer, n8n expert, make.com automation, GPT workflows, systems architect, backend automation, workflow automation, business automation, SvelteKit portfolio"
+		content="automation engineer, n8n expert, make.com specialist, GPT workflows, systems architect, backend automation, business automation, workflow engineer, SvelteKit portfolio"
 	/>
 
 	<!-- 🌟 CANONICAL URL -->
 	<link rel="canonical" href="https://fabalos.com/" />
 
-	<!-- 🌟 OPENGRAPH (SOCIAL SHARING) -->
+	<!-- 🌟 OPEN GRAPH -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://fabalos.com/" />
 	<meta property="og:title" content="Fabalos Automation — Smart Systems, Clean Logic, Real Results" />
 	<meta
 		property="og:description"
-		content="Hi, I’m Fabalos. I design automated workflows using n8n, Make.com, and GPT — helping businesses streamline processes and scale smarter."
+		content="I design and automate workflows using n8n, Make.com, and GPT — delivering clean logic, scalable systems, and real operational results."
 	/>
-	<meta property="og:url" content="https://fabalos.com/" />
-	<meta property="og:type" content="website" />
 	<meta property="og:image" content="https://fabalos.com/meta/fabalos-og.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
@@ -34,11 +34,11 @@
 	<meta name="twitter:title" content="Fabalos Automation — Smart Systems, Clean Logic, Real Results" />
 	<meta
 		name="twitter:description"
-		content="Automation Systems Architect specializing in n8n, Make.com, and AI-powered workflow automation."
+		content="Automation Systems Architect specializing in n8n, Make.com, and AI-driven workflow automation."
 	/>
 	<meta name="twitter:image" content="https://fabalos.com/meta/fabalos-og.png" />
 
-	<!-- 🌟 STRUCTURED DATA (Google loves this) -->
+	<!-- 🌟 STRUCTURED DATA (JSON-LD) -->
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
@@ -56,13 +56,40 @@
 				"name": "Fabalos Automation"
 			},
 			"knowsAbout": [
-				"n8n workflow automation",
+				"n8n automation",
 				"Make.com integrations",
-				"GPT automations",
+				"GPT workflow automations",
 				"backend systems design",
-				"API integrations",
-				"SaaS automation"
+				"API orchestration",
+				"AI-powered automation"
 			]
 		}
 	</script>
 </svelte:head>
+
+<script lang="ts">
+	// 📦 Component Imports
+	import About from '$lib/components/About.svelte';
+	import BrandsSection from '$lib/components/BrandsSection.svelte';
+	import CaseStudyTeaser from '$lib/components/CaseStudyTeaser.svelte';
+	import CTA from '$lib/components/CTA.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Hero from '$lib/components/Hero.svelte';
+	import Stack from '$lib/components/Stack.svelte';
+</script>
+
+<!-- 🧭 Global Layout -->
+<Header />
+
+<main>
+	<!-- 🚀 Landing Sections -->
+	<Hero />
+	<About />
+	<CaseStudyTeaser />
+	<BrandsSection />
+	<Stack />
+	<CTA />
+</main>
+
+<Footer />

@@ -1,7 +1,3 @@
-<svelte:head>
-  <title>Smart Systems. Real Results.</title>
-  <meta name="description" content="Automation engineering using n8n, Make.com, and GPT — built for scalability and operational clarity." />
-</svelte:head>
 
 <svelte:head>
   <title>Fabalos Automation – Clean Logic. Smart Systems. Real Results.</title>
