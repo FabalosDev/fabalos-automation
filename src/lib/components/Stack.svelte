@@ -1,3 +1,7 @@
+<svelte:head>
+  <meta name="description" content="My automation stack includes n8n, Make.com, Supabase, GPT, Python, Airtable, and API-driven integrations." />
+</svelte:head>
+
 <script>
 	import { BarChart2, FileText, Bell, Database, Bot, Repeat } from 'lucide-svelte';
 </script>

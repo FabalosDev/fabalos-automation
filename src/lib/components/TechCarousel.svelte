@@ -1,3 +1,7 @@
+<svelte:head>
+  <meta name="description" content="The tools powering my automation builds — optimized for speed, reliability, and long-term scalability." />
+</svelte:head>
+
 <script>
 	export let items = [
 		{ src: '/stack/openai.svg', alt: 'GPT' },

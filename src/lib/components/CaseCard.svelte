@@ -1,3 +1,7 @@
+<svelte:head>
+  <meta name="description" content="Real automation systems engineered with clean logic, stable workflows, and measurable results." />
+</svelte:head>
+
 <script lang="ts">
 	export let title: string;
 	export let summary: string;

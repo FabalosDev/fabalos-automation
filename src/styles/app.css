@@ -1,2 +1,14 @@
-/* ===================== app.css ===================== */ 
-@import './global.css';
+/* ===================== global.css ===================== */
+
+/* 1. Load your design tokens FIRST */
+@import "./theme.css";
+
+/* 2. Load your custom utilities & component CSS */
+@import "./layout.css";
+
+/* 3. THEN load Tailwind so it can read the layers above */
+@import "tailwindcss";
+
+/* 4. Optional overrides after Tailwind */
+html { font-family: var(--font-body); }
+h1, h2, h3 { font-family: var(--font-heading); }

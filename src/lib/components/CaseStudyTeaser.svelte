@@ -1,3 +1,7 @@
+<svelte:head>
+  <meta name="description" content="A deeper look into the automation projects inside the FoxOps ecosystem." />
+</svelte:head>
+
 <section id="case-study" class="section bg-background text-main">
 	<div class="stack container">
 		<!-- 🔹 Section Header -->
@@ -67,10 +71,5 @@
 				</a>
 			</div>
 		</div>
-	</div>
-	<div class="mt-8 text-center">
-		<a href="/case-study" class="btn-solid mt-6 inline-block">
-			<span>View Full Case Study</span>
-		</a>
 	</div>
 </section>

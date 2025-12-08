@@ -1,3 +1,8 @@
+
+<svelte:head>
+  <meta name="description" content="I’m an Automation Systems Architect specializing in workflow engineering using n8n, Make.com, and GPT. I build scalable automation systems that reduce errors, eliminate manual work, and power modern operations." />
+</svelte:head>
+
 <section id="about" class="section bg-surface text-main">
 	<div class="stack container space-y-6">
 		<!-- 🔹 Section Title -->

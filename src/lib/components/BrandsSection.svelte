@@ -1,3 +1,7 @@
+<svelte:head>
+  <meta name="description" content="Trusted by teams using automation to scale faster, work smarter, and reduce operational load." />
+</svelte:head>
+
 <section id="brands" class="section bg-surface text-main">
 	<div class="stack center-text container">
 		<h2 class="font-heading text-primary text-3xl">Brands I’ve Worked With</h2>

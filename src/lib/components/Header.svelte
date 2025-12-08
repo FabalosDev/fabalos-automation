@@ -1,3 +1,7 @@
+<svelte:head>
+  <meta name="description" content="Home · About · Case Studies · Stack · Contact" />
+</svelte:head>
+
 <script>
 	import { slide } from 'svelte/transition';
 

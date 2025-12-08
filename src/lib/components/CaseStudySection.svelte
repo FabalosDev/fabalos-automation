@@ -1,3 +1,7 @@
+<svelte:head>
+  <meta name="description" content="Explore the automation frameworks powering real business operations — from AI content workflows to API orchestration and data automation." />
+</svelte:head>
+
 <section class="section bg-background text-main">
 	<div class="stack center-text container">
 		<!-- 🔹 Section Header -->

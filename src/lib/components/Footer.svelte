@@ -1,3 +1,7 @@
+<svelte:head>
+  <meta name="description" content="Fabalos Automation — Engineering modern automation using n8n, Make.com, GPT, and system-level workflow design." />
+</svelte:head>
+
 <script>
 	import { Github, Linkedin } from 'lucide-svelte';
 </script>
