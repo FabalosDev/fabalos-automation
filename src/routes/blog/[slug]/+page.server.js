@@ -1,12 +1,24 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 export const load = async ({ params }) => {
-	const dir = path.join(process.cwd(), 'src/content/blog');
+	// resolve physical directory of this file
+	const __filename = fileURLToPath(import.meta.url);
+	const __dirname = path.dirname(__filename);
 
-	// find matching json file
+	// ABSOLUTE PATH to blog content
+	const dir = path.join(__dirname, '../../../content/blog');
+
+	if (!fs.existsSync(dir)) {
+		console.error('Blog directory does not exist:', dir);
+		return {
+			status: 500,
+			error: new Error('Blog directory missing on server')
+		};
+	}
+
 	const files = fs.readdirSync(dir).filter((file) => file.endsWith('.json'));
-
 	let found = null;
 
 	for (const file of files) {
@@ -26,7 +38,5 @@ export const load = async ({ params }) => {
 		};
 	}
 
-	return {
-		post: found
-	};
+	return { post: found };
 };
