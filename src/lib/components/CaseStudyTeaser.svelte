@@ -1,36 +1,41 @@
 <svelte:head>
-  <meta name="description" content="A deeper look into the automation projects inside the FoxOps ecosystem." />
+  <meta
+    name="description"
+    content="A showcase of featured automation builds and workflow systems engineered inside the FoxOps ecosystem."
+  />
 </svelte:head>
 
-<section id="case-study" class="section bg-background text-main">
-	<div class="stack container">
+<section id="case-study" class="section bg-background text-main scroll-mt-20">
+	<div class="stack container max-w-7xl space-y-6">
+
 		<!-- 🔹 Section Header -->
-		<h2 class="font-heading text-primary text-center text-3xl md:text-4xl">
-			Automation Case Studies
+<h2 class="font-heading text-primary text-center text-3xl md:text-4xl mb-3">
+			Featured Work
 		</h2>
 		<p class="text-soft mx-auto max-w-2xl text-center text-lg">
-			A look inside the automation architectures I've engineered — designed to remove bottlenecks,
-			reduce manual load, and scale operations with precision.
+			A curated selection of automation workflows I've engineered — highlighting practical systems
+			that improve operations, reduce manual load, and demonstrate scalable logic design.
 		</p>
 
-		<!-- 🔸 Grid of Case Studies -->
+		<!-- 🔸 Featured Work Grid -->
 		<div class="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2">
-			<!-- 🧠 Case Study 1 -->
-			<div class="bg-surface border-border rounded-xl border p-6 shadow transition hover:shadow-lg">
+
+			<!-- ⭐ Featured Work 1 -->
+<div class="bg-surface border-border rounded-xl border p-6 shadow card-hover transition hover:shadow-lg">
 				<h3 class="font-heading text-primary mb-3 text-2xl">
 					Product Tagging Automation (Make.com + GPT)
 				</h3>
 
 				<p class="text-soft mb-4 leading-relaxed">
-					A fully automated tagging pipeline that replaces manual classification with a hybrid GPT +
-					rules-based model. Built for a fast-scaling media team handling thousands of SKUs.
+					A fully automated tagging pipeline replacing manual classification with a hybrid
+					GPT + rules-based engine — used by a fast-scaling media team handling thousands of SKUs.
 				</p>
 
 				<ul class="text-soft mb-4 space-y-1 text-sm">
 					<li>✔️ GPT-assisted tagging with fallback logic</li>
-					<li>✔️ Parallel routing for multi-category processing</li>
-					<li>✔️ Google Sheets integration as dynamic control panel</li>
-					<li>✔️ Reduced tagging workload by 90%</li>
+					<li>✔️ Parallel multi-category routing</li>
+					<li>✔️ Google Sheets as a dynamic control panel</li>
+					<li>✔️ 90% reduction in manual workload</li>
 				</ul>
 
 				<a
@@ -43,22 +48,22 @@
 				</a>
 			</div>
 
-			<!-- 🧠 Case Study 2 -->
-			<div class="bg-surface border-border rounded-xl border p-6 shadow transition hover:shadow-lg">
+			<!-- ⭐ Featured Work 2 -->
+<div class="bg-surface border-border rounded-xl border p-6 shadow card-hover transition hover:shadow-lg">
 				<h3 class="font-heading text-primary mb-3 text-2xl">
 					Instant AI Response System (Tally → n8n)
 				</h3>
 
 				<p class="text-soft mb-4 leading-relaxed">
-					A real-time response generator triggered through a Tally form. Parsed, processed, and
-					returned in seconds — no GPT API required.
+					A real-time response generator triggered through a Tally form — parsed, processed, and
+					returned in seconds using smart logic patterns. No GPT API required.
 				</p>
 
 				<ul class="text-soft mb-4 space-y-1 text-sm">
 					<li>✔️ Tally form as the input frontend</li>
-					<li>✔️ Webhook → logic engine → response formatter</li>
-					<li>✔️ Dynamic routing for personalized outputs</li>
-					<li>✔️ Deployable on Railway or local tunnel</li>
+					<li>✔️ Webhook → logic engine → dynamic formatter</li>
+					<li>✔️ Personalized response routing</li>
+					<li>✔️ Deployable via Railway or local tunnel</li>
 				</ul>
 
 				<a
@@ -71,5 +76,15 @@
 				</a>
 			</div>
 		</div>
+
+		<!-- CTA -->
+		<div class="flex flex-wrap justify-center gap-4 pt-4">
+			<a href="/case-study" class="btn-primary">
+				<span>Explore Case Studies</span>
+			</a>
+		</div>
+
 	</div>
 </section>
+
+<div class="section-divider"></div>

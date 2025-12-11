@@ -1,19 +1,17 @@
+import fs from 'fs';
+import path from 'path';
+
 export const load = async ({ params }) => {
-	const modules = import.meta.glob('../data/*.json', { eager: true });
+	const { slug } = params;
 
-	const entries = Object.entries(modules).map(([path, mod]) => {
-		const slug = path.split('/').pop().replace('.json', '');
-		return { slug, ...mod.default };
-	});
+	const filePath = path.join(process.cwd(), 'src/content/case-study', `${slug}.json`);
 
-	const study = entries.find((entry) => entry.slug === params.slug);
-
-	if (!study) {
-		return {
-			status: 404,
-			error: new Error(`Case study not found: ${params.slug}`)
-		};
+	if (!fs.existsSync(filePath)) {
+		return { status: 404 };
 	}
+
+	const raw = fs.readFileSync(filePath, 'utf-8');
+	const study = JSON.parse(raw);
 
 	return { study };
 };

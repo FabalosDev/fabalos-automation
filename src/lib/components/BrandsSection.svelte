@@ -1,60 +1,81 @@
-<svelte:head>
-  <meta name="description" content="Trusted by teams using automation to scale faster, work smarter, and reduce operational load." />
-</svelte:head>
-
 <section id="brands" class="section bg-surface text-main">
-	<div class="stack center-text container">
-		<h2 class="font-heading text-primary text-3xl">Brands I’ve Worked With</h2>
+  <div class="stack center-text container max-w-7xl space-y-6">
 
-		<p class="text-soft mb-6 text-lg">
-			Real automation contributions across engineering, e-commerce, and digital ops.
-		</p>
+    <h2 class="font-heading text-primary text-3xl">Brands I’ve Worked With</h2>
 
-		<!-- Brand Grid -->
-		<div class="mt-6 grid grid-cols-2 justify-items-center gap-10 sm:grid-cols-3 md:grid-cols-4">
-			<!-- Festo -->
-			<div class="group flex flex-col items-center opacity-80 transition hover:opacity-100">
-				<img src="/brands/festo.svg" class="mx-auto h-14" alt="Festo" />
-			</div>
+    <p class="text-soft mb-6 text-lg">
+      A snapshot of organizations where I’ve contributed to automation, workflow
+      optimization, and technical operations.
+    </p>
 
-			<!-- ICC -->
-			<div class="group flex flex-col items-center opacity-80 transition hover:opacity-100">
-				<img src="/brands/icc.png" class="mx-auto h-14" alt="Industrial Controls Corp" />
-			</div>
+    <!-- ★ Symmetrical Logo Grid -->
+    <div class="brand-grid">
+      <div class="brand-box">
+        <img src="/brands/festo.svg" alt="Festo" />
+      </div>
 
-			<!-- The Purple Furball -->
-			<div class="group flex flex-col items-center opacity-80 transition hover:opacity-100">
-				<img src="/brands/thepurplefurball.png" class="mx-auto h-16" alt="The Purple Furball" />
-			</div>
+      <div class="brand-box">
+        <img src="/brands/icc.png" alt="Industrial Controls Corp" />
+      </div>
 
-			<!-- GlamGadget -->
-			<div class="group flex flex-col items-center opacity-80 transition hover:opacity-100">
-				<img src="/brands/glamgadget.jpg" class="mx-auto h-16" alt="GlamGadget" />
-			</div>
+      <div class="brand-box">
+        <img src="/brands/thepurplefurball.png" alt="The Purple Furball" />
+      </div>
 
-			<!-- Biohack Yourself -->
-			<div class="group flex flex-col items-center opacity-80 transition hover:opacity-100">
-				<img src="/brands/biohack.png" class="mx-auto h-14" alt="Biohack Yourself" />
-			</div>
+      <div class="brand-box">
+        <img src="/brands/glamgadget.jpg" alt="GlamGadget" />
+      </div>
 
-			<!-- MSP Launchpad -->
-			<div class="group flex flex-col items-center opacity-80 transition hover:opacity-100">
-				<img src="/brands/mspl.png" class="mx-auto h-14" alt="MSP Launchpad" />
-			</div>
+      <div class="brand-box">
+        <img src="/brands/biohack.png" alt="Biohack Yourself" />
+      </div>
 
-			<!-- + more pill -->
-			<div
-				class="border-border text-soft mx-auto inline-flex items-center justify-center rounded-lg border
-                px-4 py-2 text-sm italic opacity-70 transition hover:opacity-100"
-			>
-				+ more
-			</div>
-		</div>
-	</div>
+      <div class="brand-box">
+        <img src="/brands/mspl.png" alt="MSP Launchpad" />
+      </div>
+    </div>
 
-	<p class="mt-20 text-center text-[0.70rem] italic leading-relaxed opacity-60">
-		The logos shown represent companies I’ve supported through employment or project-based
-		contributions. This section is for demonstration purposes only and does not indicate
-		partnership, endorsement, or current affiliation.
-	</p>
+  </div>
+
+  <p class="mt-20 text-center text-[0.70rem] italic leading-relaxed opacity-60">
+    Logos represent companies where I have delivered automation work through
+    employment or project-based engagements. Displayed for capability reference
+    only; not intended as endorsements or active partnerships.
+  </p>
 </section>
+
+<style>
+  /* ★ Grid becomes symmetrical regardless of logo size */
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2.5rem;
+    place-items: center;
+    margin-top: 1.5rem;
+  }
+
+  /* ★ Each logo sits inside a fixed-size box */
+  .brand-box {
+    width: 140px;
+    height: 70px; /* all equal height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+
+  .brand-box:hover {
+    opacity: 1;
+  }
+
+  /* ★ Logos auto-scale but stay inside the box */
+  .brand-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: brightness(0.95);
+  }
+</style>
+
+<div class="section-divider"></div>

@@ -5,7 +5,35 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) an
 
 ---
 
-# 📦 Change Log — v1.3.0: Fabalos Launch
+# 📦 Change Log — v1.3.1: Fabalos Launch
+
+## 🔖 v1.3.1 – A refined, stable release focusing on UI consistency, performance optimization, and predictable layout behavior across all blog and case-study components.
+
+### 🔧 Improvements
+
+Added lazy loading (loading="lazy") and decoding="async" to all blog and case study images
+→ Faster load time, smoother scroll performance.
+Normalized footer placement across Blog, Blog Category, Blog Post, and Case Study pages.
+→ Footer now sits outside containers consistently.
+Adjusted category-to-grid spacing on Blog Category page
+→ Prevents categories from touching the card grid.
+
+Cleaned up duplicate CSS blocks in Blog and Blog Category pages.
+Standardized section margins for blog posts to avoid layout shifting.
+Ensured consistent container padding across all blog-related pages.
+
+🐞 Fixes
+
+Fixed missing footer on some pages caused by nested placement.
+Corrected inconsistent margin collapse between .category-title and card grid.
+Removed duplicate .blog-card and .card-img definitions to avoid overrides.
+Ensured Prettier correctly formats Svelte files using the non-legacy extension.
+
+🧩 Internal Stabilization
+
+Locked into PATCH-only workflow for UI edits to avoid unintended layout changes.
+Verified that lazy loading does not conflict with existing styles.
+Confirmed Svelte scoping behavior and removed layout drift caused by earlier rewrites.
 
 ## 🔖 v1.3.0 – Website Layout Update + Case Study System Foundation (2025-12-07)
 

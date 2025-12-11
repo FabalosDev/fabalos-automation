@@ -15,108 +15,69 @@ This site serves as the official public profile of **Fabalos** — a Mechatronic
 
 ---
 
-## 🚀 **Overview**
+# 📘 **README — v1.3.1 Update**
 
-- Fully redesigned automation portfolio
-- Hero section with animated stack carousel
-- Dynamic case study system (`/case-study/[slug]`)
-- Data-driven structure using JSON
-- Modular components and Foxther-branded theme
-- Clean, responsive layout with dark/light support
+## **Fabalos Automation — v1.3.1**
+
+A refined, stable release focusing on **UI consistency**, **performance optimization**, and **predictable layout behavior** across all blog and case-study components.
 
 ---
 
-## 🧱 **Project Structure**
+## **🚀 New in 1.3.1**
 
-```text
-src/
- ├─ lib/
- │   ├─ components/
- │   ├─ layouts/
- │   └─ utils/
- ├─ routes/
- │   ├─ +page.svelte        → homepage
- │   ├─ case-study/
- │   │     ├─ +page.svelte → listing page
- │   │     └─ [slug]/
- │   │          └─ +page.svelte → dynamic case pages
-data/
- └─ case-studies.json       → master dataset
-```
+### **Image Optimization**
 
----
-## 🧠 **Case Study System**
+All relevant images now use:
 
-All case studies are stored inside:
+`loading="lazy" decoding="async"`
 
-`/data/case-studies.json`
-
-Each entry contains:
-
-`{   "slug": "make-tagging-automation",   "title": "Make.com + GPT Tagging Automation",   "summary": "Automated product tagging using GPT and Sheets.",   "badge": ["Automation", "AI"],   "image": "/images/case-tagging.png" }`
-
-Pages are generated automatically via `[slug]`.
-
-This allows **12+ professional case studies** without repetitive manual work.
+This significantly improves time-to-render and reduces layout jank on slower connections.
 
 ---
 
-## 🛠️ **Tech Stack**
+## **🎨 Layout & UX Cleanup**
 
-- **SvelteKit** — main framework
+- Footer is now consistently placed **outside** each main section.
 
-- **TailwindCSS v4.1** — design system
+- Spacing adjustments prevent elements from overlapping or appearing cramped.
 
-- **Make.com + n8n** — automation backend
+- Blog cards now follow unified styling rules across all pages.
 
-- **GPT models** — logic narration, flow generation
-
-- **Supabase (optional)** — future DB layer
-
-- **Cloudflare + Vercel** — deployment-ready
+- Category pills gracefully wrap even when there are many categories.
 
 
 ---
 
-## 📄 **Pages**
+## **🧹 Code Cleanup**
 
-|Route|Description|
-|---|---|
-|`/`|Hero + brand positioning + stack carousel|
-|`/case-study`|Case study gallery (Level 1 public view)|
-|`/case-study/[slug]`|Full deep-dive case study pages|
-|`/projects` _(future)_|Expanded automation portfolio|
-|`/tools` _(future)_|FoxOps internal/external tools|
+- Duplicate CSS blocks removed.
 
----
+- Global spacing normalized.
 
-## 🎨 **Branding**
-
-The site uses the **Foxther Theme**, including:
-
-- orange primary
-
-- matte surfaces
-
-- neon-hover buttons
-
-- softened typography
-
-- dark/light system tokens
+- Components updated to align with the **FoxOps UX rules** (clean, consistent, neon-glow aesthetic).
 
 
 ---
 
-## 🔖 **Versioning**
+## **🛠 Developer Notes**
 
-- **1.3.0** — Case study dynamic routing + data model
+- Prettier has been corrected to use the proper extension (non-legacy).
 
-- **1.2.0** — Components stable + theme cleanup
+- Svelte formatting is consistent across workspace.
 
-- **1.0.0** — Public release
+- PATCH-only workflow is now the standard to minimize cascading layout issues.
 
 
-Full history in `CHANGELOG.md`.
+---
+
+## **📌 Next Targets (v1.3.2 Preview)**
+
+- Optional: Move repetition-heavy styles to global CSS.
+
+- Optional: Turn blog + case study card into a reusable component.
+
+- Optional: Add Cloudinary resizing URLs for even faster loads.
+
 
 ---
 

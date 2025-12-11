@@ -1,65 +1,67 @@
-/* ===================== LAYOUT.CSS ===================== */
+/* ============================================================
+   LAYOUT.CSS — FoxOps Clean Edition
+   Utilities → Components → Animations
+   ============================================================ */
+
+
+/* ===================== UTILITIES ===================== */
 
 @layer utilities {
+
   /* Layout Helpers */
   .container { @apply max-w-screen-lg mx-auto px-4 md:px-6 lg:px-8; }
-  .section { @apply py-12 md:py-20; }
+  .section { @apply py-12 md:py-16; }
   .stack { @apply flex flex-col gap-6; }
   .grid-two { @apply grid grid-cols-1 md:grid-cols-2 gap-8; }
   .grid-three { @apply grid grid-cols-1 md:grid-cols-3 gap-8; }
   .center-text { @apply text-center max-w-xl mx-auto; }
 
-  /* Typography utilities */
+  /* Typography */
   .font-heading { font-family: var(--font-heading); }
   .text-main { color: var(--text-main); }
   .text-soft { color: var(--text-soft); }
 
-  /* Background shortcuts */
+  /* Background Helpers */
   .bg-background { background-color: var(--background); }
   .bg-surface { background-color: var(--surface); }
   .bg-primary { background-color: var(--primary); }
   .bg-accent { background-color: var(--accent); }
 
-  /* CTA block */
+  /* CTA Block */
   .cta-block {
     @apply py-12 px-8 text-center rounded-xl;
     background-color: var(--primary);
     color: white;
   }
-
   .cta-block h2 { @apply text-2xl md:text-3xl mb-4 font-heading; }
   .cta-block p { @apply text-base md:text-lg mb-6 text-white/90; }
 }
 
+
+/* ===================== COMPONENTS ===================== */
+
 @layer components {
 
-.btn-silver-hover {
-  @apply relative inline-block px-6 py-3 font-medium rounded-lg border overflow-hidden transition-colors;
-  border-color: white;
-  color: white;
-  background-color: transparent;
-}
+  /* ---------------- Silver Hover Button ---------------- */
+  .btn-silver-hover {
+    @apply relative inline-block px-6 py-3 font-medium rounded-lg border overflow-hidden transition-colors;
+    border-color: white;
+    color: white;
+    background: transparent;
+  }
 
-.btn-silver-hover::before {
-  content: "";
-  @apply absolute inset-0 bg-white scale-x-0 origin-left transition-transform duration-300;
-  z-index: 0;
-}
+  .btn-silver-hover::before {
+    content: "";
+    @apply absolute inset-0 bg-white scale-x-0 origin-left transition-transform duration-300;
+    z-index: 0;
+  }
 
-.btn-silver-hover:hover::before {
-  @apply scale-x-100;
-}
-
-.btn-silver-hover:hover {
-  color: var(--primary); /* orange text on hover */
-}
-
-.btn-silver-hover span {
-  @apply relative z-10;
-}
+  .btn-silver-hover:hover::before { @apply scale-x-100; }
+  .btn-silver-hover:hover { color: var(--primary); }
+  .btn-silver-hover span { @apply relative z-10; }
 
 
-  /* Outline → Solid Hover */
+  /* ---------------- Primary (Outline → Solid Hover) ---------------- */
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-lg border transition-all font-medium;
     color: var(--primary);
@@ -78,51 +80,91 @@
     transition: transform 0.3s ease;
     z-index: 0;
   }
+
   .btn-primary:hover::before { transform: scaleX(1); }
   .btn-primary:hover { color: white; }
   .btn-primary span { @apply relative z-10; }
 
-/* Solid → Outline Hover */
-.btn-solid {
-  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg transition-all font-medium;
-  background: var(--primary);
-  color: white;
-  border: 1px solid transparent;
-  position: relative;
-  overflow: hidden;
+
+  /* ---------------- Solid (Solid → Outline Hover) ---------------- */
+  .btn-solid {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg transition-all font-medium;
+    background: var(--primary);
+    color: white;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-solid::before {
+    content: "";
+    @apply absolute inset-0 bg-transparent;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: 0;
+  }
+
+  .btn-solid:hover::before { transform: scaleX(1); }
+  .btn-solid:hover { background: transparent; color: var(--primary); border-color: var(--primary); }
+  .btn-solid span { @apply relative z-10; }
+
 }
 
-.btn-solid::before {
-  content: "";
-  @apply absolute inset-0 bg-transparent;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-  z-index: 0;
+
+/* ===================== FOOTER ELEMENTS ===================== */
+
+.powered-note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #999;
+  opacity: 0.85;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s ease;
+}
+.powered-note:hover {
+  opacity: 1;
+  color: #ccc;
 }
 
+.footer-powered {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #aaa;
+  opacity: 0.9;
+  line-height: 1.4;
+  justify-content: center; /* ← THIS FIXES THE CENTERING */
+  text-align: center;
+  transition: opacity 0.25s ease;
+}
+.footer-powered:hover { opacity: 1; }
 
-.btn-solid:hover::before { transform: scaleX(1); }
+.footer-powered .engine { font-weight: 600; color: #e4e4e4; }
+.footer-powered .brand { font-weight: 600; color: #ff7a1a; }
+.footer-powered .divider { opacity: 0.4; margin: 0 4px; }
 
-.btn-solid:hover {
-  background: transparent;
-  color: var(--primary);
-  border-color: var(--primary);
+
+/* ===================== SPARK ICON (Unified Version) ===================== */
+
+.spark {
+  display: inline-block;
+  color: #ff7a1a;
+  animation: pulse-glow 1.4s ease-in-out infinite;
 }
 
-.btn-solid span { @apply relative z-10; }
-}
+/* Remove the old sparkPulse animation — now using pulse-glow only */
 
+
+/* ===================== ANIMATIONS ===================== */
 
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in-up {
@@ -130,15 +172,120 @@
 }
 
 .loader {
-	width: 14px;
-	height: 14px;
-	border: 2px solid rgba(255,255,255,0.4);
-	border-top-color: white;
-	border-radius: 50%;
-	animation: spin 0.6s linear infinite;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
 }
 
-@keyframes spin {
-	to { transform: rotate(360deg); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Spark Pulse Glow */
+@keyframes pulse-glow {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 2px #ff7a1a);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 6px #ff7a1a);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 2px #ff7a1a);
+  }
+}
+
+/* ===================== FOOTER ======================= */
+
+.footer-links {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #aaa;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-a {
+  color: #bbb;
+  transition: color 0.25s ease;
+}
+
+.footer-a:hover {
+  color: var(--primary);
+}
+
+.footer-links .link-label {
+  opacity: 0.8;
+}
+
+.footer-links .divider {
+  opacity: 0.4;
+  margin: 0 4px;
+}
+
+/* ===================== GLOW UTILITIES ===================== */
+
+.glow-border {
+  position: relative;
+  border-radius: 12px;
+}
+
+.glow-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 122, 26, 0.35),
+    rgba(0, 220, 255, 0.35)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ===================== FLOAT / MOTION ===================== */
+
+@keyframes float-slow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float-slow 5s ease-in-out infinite;
+}
+
+.hover-lift {
+  transition: transform .25s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.section-divider {
+  @apply w-full h-px my-8 md:my-12 bg-gradient-to-r from-white/0 via-white/10 to-white/0;
+}
+
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
 }
 

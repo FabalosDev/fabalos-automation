@@ -1,8 +1,10 @@
 <script lang="ts">
 	import '$styles/global.css';
 	import '$styles/app.css';
-	// 🔄 Optional: Move Header to individual pages if layout-specific
-	// import Header from '$lib/components/Header.svelte';
+
+	import Modal from '$lib/components/ui/Modal.svelte';
+	import GetInTouchForm from '$lib/components/forms/GetInTouchForm.svelte';
+	import { showContactModal } from '$lib/stores/contact.js';
 </script>
 
 <svelte:head>
@@ -48,7 +50,18 @@
 	<link rel="icon" type="image/png" sizes="512x512" href="/512x512.png" />
 </svelte:head>
 
-<!-- 🌌 Global Layout Shell -->
+<!-- 🌌 GLOBAL LAYOUT SHELL -->
 <div class="text-main bg-background min-h-screen font-sans">
-	<slot />
+	<slot />   <!-- main content injected here -->
 </div>
+
+<!-- 🌟 GLOBAL MODAL (works from ANY component) -->
+<Modal
+	open={$showContactModal}
+	onClose={() => showContactModal.set(false)}
+>
+	<GetInTouchForm
+		onClose={() => showContactModal.set(false)}
+	/>
+</Modal>
+

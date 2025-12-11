@@ -1,0 +1,18 @@
+{
+	"title": "My First Automated Blog Post",
+	"slug": "my-first-blog",
+	"date": "2025-12-12",
+	"tags": ["Automation", "SvelteKit", "n8n"],
+	"category": "Automation",
+	"summary": "This is the first blog post stored as JSON. Soon this will be fully automated.",
+	"content": [
+		{
+			"type": "p",
+			"text": "Welcome to my new blog system! This entire blog is powered using JSON files, making it easy to automate updates later with n8n."
+		},
+		{
+			"type": "p",
+			"text": "In the future, each post will be written, parsed, and deployed automatically using automation workflows."
+		}
+	]
+}

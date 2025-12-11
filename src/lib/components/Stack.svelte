@@ -1,93 +1,104 @@
+<!-- ============================================
+     ENTERPRISE CAPABILITIES SECTION
+     Clean • Professional • Automation Agency
+   ============================================ -->
+
 <svelte:head>
-  <meta name="description" content="My automation stack includes n8n, Make.com, Supabase, GPT, Python, Airtable, and API-driven integrations." />
+  <meta name="description" content="Explore the automation capabilities engineered to reduce operational load, eliminate repetitive tasks, and enable scalable business systems." />
 </svelte:head>
 
 <script>
-	import { BarChart2, FileText, Bell, Database, Bot, Repeat } from 'lucide-svelte';
+  import {
+    Workflow,
+    Activity,
+    GitBranch,
+    Repeat,
+    Layers,
+    ServerCog
+  } from 'lucide-svelte';
 </script>
 
-<section id="stack" class="section bg-background text-main">
-	<div class="container">
-		<!-- 🔹 What's Possible -->
-		<h2 class="font-heading text-primary mb-2 text-center text-3xl">What's Possible</h2>
-		<p class="text-soft mb-12 text-center">Discover workflows that radically save time</p>
+<section id="stack" class="section bg-background text-main scroll-mt-20">
+  <div class="container max-w-7xl space-y-10">
 
-		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-			<!-- ✅ Use Case Card -->
-			<div
-				class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md"
-			>
-				<BarChart2 class="text-primary mx-auto mb-4" size="32" stroke-width="1.5" />
-				<span
-					class="bg-primary/10 text-primary mb-4 inline-block rounded-full px-3 py-1 text-xs font-medium"
-				>
-					Report
-				</span>
-				<h3 class="font-heading text-primary mb-2 text-xl">Generate weekly reports</h3>
-				<p class="text-soft text-sm">Automate the creation of complex reports.</p>
-			</div>
+    <!-- Header -->
+    <div class="center-text">
+      <h2 class="font-heading text-primary text-3xl md:text-4xl">
+        What I Build
+      </h2>
+      <p class="text-soft text-lg max-w-2xl mx-auto">
+        Automation systems engineered for clarity, reliability, and operational scale.
+      </p>
+    </div>
 
-			<!-- Use Case 2 -->
-			<div
-				class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md"
-			>
-				<FileText class="text-primary mx-auto mb-4" size="32" stroke-width="1.5" />
-				<span
-					class="bg-accent/10 text-accent mb-4 inline-block rounded-full px-3 py-1 text-xs font-medium"
-				>
-					Process
-				</span>
-				<h3 class="font-heading text-primary mb-2 text-xl">Process form submissions</h3>
-				<p class="text-soft text-sm">Handle and organize form data efficiently.</p>
-			</div>
+    <!-- GRID of Capabilities -->
+    <div class="grid-two md:grid-cols-3 gap-8">
 
-			<!-- Use Case 3 -->
-			<div
-				class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md"
-			>
-				<Bell class="text-primary mx-auto mb-4" size="32" stroke-width="1.5" />
-				<span
-					class="bg-warning/10 text-warning mb-4 inline-block rounded-full px-3 py-1 text-xs font-medium"
-				>
-					Notify
-				</span>
-				<h3 class="font-heading text-primary mb-2 text-xl">Notify your users</h3>
-				<p class="text-soft text-sm">Send automated messages to your audience.</p>
-			</div>
-		</div>
-	</div>
+      <!-- Card 1 -->
+      <div class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md card-hover">
 
-	<!-- 🚀 Tools & Tech -->
-	<div class="container">
-		<h2 class="font-heading text-primary mb-8 mt-20 text-center text-3xl">Tech & Tools I Use</h2>
+        <Workflow class="text-primary mb-4 mx-auto" size="36" stroke-width="1.5" />
+        <h3 class="font-heading text-primary text-xl mb-2 text-center">Workflow Automation</h3>
+        <p class="text-soft text-sm leading-relaxed text-center">
+          Build structured workflows that eliminate repetitive tasks and improve operational flow.
+        </p>
+      </div>
 
-		<div class="grid grid-cols-1 gap-6 text-center sm:grid-cols-2 md:grid-cols-3">
-			<!-- Make.com -->
-			<div
-				class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md"
-			>
-				<Repeat class="text-primary mx-auto mb-4" size="32" stroke-width="1.5" />
-				<h3 class="font-heading text-primary mb-2 text-xl">Make.com</h3>
-				<p class="text-soft mt-2 text-sm">Visual builder with powerful integrations.</p>
-			</div>
+      <!-- Card 2 -->
+      <div class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md card-hover">
 
-			<!-- GPT -->
-			<div
-				class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md"
-			>
-				<Bot class="text-primary mx-auto mb-4" size="32" stroke-width="1.5" />
-				<h3 class="font-heading text-primary mb-2 text-xl">GPT</h3>
-				<p class="text-soft mt-2 text-sm">Context-aware tagging and data generation.</p>
-			</div>
+        <GitBranch class="text-primary mb-4 mx-auto" size="36" stroke-width="1.5" />
+        <h3 class="font-heading text-primary text-xl mb-2 text-center">Process Orchestration</h3>
+        <p class="text-soft text-sm leading-relaxed text-center">
+          Multi-step automation logic integrating several tools under a unified workflow engine.
+        </p>
+      </div>
 
-			<!-- n8n -->
-			<div
-				class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md"
-			>
-				<Database class="text-primary mx-auto mb-4" size="32" stroke-width="1.5" />
-				<h3 class="font-heading text-primary mb-2 text-xl">n8n</h3>
-				<p class="text-soft mt-2 text-sm">Self-hosted flows for secure automation pipelines.</p>
-			</div>
-		</div>
-	</div>
+      <!-- Card 3 -->
+
+      <div class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md card-hover">
+
+        <Activity class="text-primary mb-4 mx-auto" size="36" stroke-width="1.5" />
+        <h3 class="font-heading text-primary text-xl mb-2 text-center">Operational Intelligence</h3>
+        <p class="text-soft text-sm leading-relaxed text-center">
+          Systems that surface insights automatically — reporting, monitoring, alerts, and analytics.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+
+      <div class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md card-hover">
+
+        <Layers class="text-primary mb-4 mx-auto" size="36" stroke-width="1.5" />
+        <h3 class="font-heading text-primary text-xl mb-2 text-center">Data Automation</h3>
+        <p class="text-soft text-sm leading-relaxed text-center">
+          Structured pipelines for processing, enriching, and syncing data across systems.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+
+      <div class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md card-hover">
+        <ServerCog class="text-primary mb-4 mx-auto" size="36" stroke-width="1.5" />
+        <h3 class="font-heading text-primary text-xl mb-2 text-center">System Integration</h3>
+        <p class="text-soft text-sm leading-relaxed text-center">
+          Connect applications through APIs, webhooks, and secure Automation-as-Infrastructure.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-surface border-border rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md card-hover">
+
+        <Repeat class="text-primary mb-4 mx-auto" size="36" stroke-width="1.5" />
+        <h3 class="font-heading text-primary text-xl mb-2 text-center">Scaling & Reliability</h3>
+        <p class="text-soft text-sm leading-relaxed text-center">
+          Design automation architectures that scale cleanly and operate without breaking.
+        </p>
+      </div>
+
+    </div>
+  </div>
 </section>
+
+<div class="section-divider"></div>
+

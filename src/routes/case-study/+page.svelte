@@ -1,39 +1,8 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
 	export let data;
-	const studies = data.studies;
 
-	const caseStudies = [
-		{
-			title: 'Case Study 1: Make.com Tagging Automation',
-			summary:
-				'Built for a media company to automate their product and article tagging workflow using Make.com, GPT, and Google Sheets.',
-			features: [
-				'✔️ Auto-collects data via Google Sheets',
-				'✔️ GPT-based sorting and fallback for edge cases',
-				'✔️ Conditional routing for parallel logic',
-				'✔️ Reduced tagging time from hours to seconds'
-			],
-			feedback:
-				'“What used to take 2 people half a day now runs in the background — clean and reliable.”',
-			ctaText: 'View Screenshot',
-			ctaHref: '/images/case-tagging.png'
-		},
-		{
-			title: 'Case Study 2: n8n Prompt Response Flow',
-			summary:
-				'Simulated a real-time AI response using a Tally form connected to an n8n webhook. The form input is parsed, a GPT-style reply is generated via expression logic, and the result is returned instantly.',
-			features: [
-				'✔️ Tally form as input frontend',
-				'✔️ Webhook triggers n8n automation',
-				'✔️ No GPT API needed — fake response is clean and instant',
-				'✔️ Runs locally via tunnel or can be deployed to Railway'
-			],
-			feedback: "“Feels like a real AI — but it's all smart automation logic.”",
-			ctaText: 'Try the Demo Form',
-			ctaHref: 'https://tally.so/r/your-form-id'
-		}
-	];
+	const studies = data.studies;
 </script>
 
 <svelte:head>
@@ -51,33 +20,38 @@
 </svelte:head>
 
 <section class="section bg-background text-main">
-	<div class="stack container">
-		<h1 class="font-heading text-primary mb-12 text-center text-4xl">Case Studies</h1>
+	<div class="stack container max-w-7xl space-y-6">
 
+		<h1 class="font-heading text-primary mb-12 text-center text-4xl">
+			Case Studies
+		</h1>
+
+		<!-- CARD GRID -->
 		<div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
 			{#each studies as study}
-				<a
-					class="bg-surface border-border block rounded-xl border p-6 transition hover:shadow-lg"
-					href={`/case-study/${study.slug}`}
-				>
-					<img
-						src={study.thumbnail}
-						alt={study.title}
-						class="mb-4 h-40 w-full rounded-lg object-cover"
-					/>
+				<a class="case-card" href={`/case-study/${study.slug}`}>
 
-					<h2 class="font-heading text-primary mb-2 text-xl">{study.title}</h2>
-					<p class="text-soft mb-4 text-sm">{study.summary}</p>
+      <img
+        src={study.thumbnail}
+        alt={study.title}
+        class="case-thumb"
+        loading="lazy"
+        decoding="async"
+        width="800"
+        height="450"
+      />
 
-					<div class="mb-4 flex flex-wrap gap-2">
+
+					<h2 class="case-title">{study.title}</h2>
+					<p class="case-summary">{study.summary}</p>
+
+					<div class="case-tags">
 						{#each study.tags as tag}
-							<span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs">
-								{tag}
-							</span>
+							<span class="case-tag">{tag}</span>
 						{/each}
 					</div>
 
-					<span class="text-primary font-semibold hover:underline"> View Case Study → </span>
+					<span class="case-more">View Case Study →</span>
 				</a>
 			{/each}
 		</div>
@@ -87,5 +61,99 @@
 			<span>← Back to Homepage</span>
 		</a>
 	</div>
-	<Footer />
+
 </section>
+
+<Footer />
+
+<style>
+.case-card {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.case-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,140,40,0.25),
+    rgba(0,220,255,0.2)
+  );
+  -webkit-mask:
+     linear-gradient(#fff 0 0) content-box,
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+}
+
+.case-card:hover::after {
+  opacity: 1;
+}
+
+.case-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.case-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.case-summary {
+  opacity: 0.85;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.case-tag {
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+.case-more {
+  margin-top: auto;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+}
+
+.case-more:hover {
+  text-decoration: underline;
+}
+</style>

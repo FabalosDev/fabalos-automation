@@ -1,7 +1,16 @@
-export const load = async () => {
-	const modules = import.meta.glob('./data/*.json', { eager: true });
+import fs from 'fs';
+import path from 'path';
 
-	const studies = Object.values(modules).map((mod) => mod.default);
+export const load = async () => {
+	const dir = path.join(process.cwd(), 'src/content/case-study');
+
+	const files = fs.readdirSync(dir).filter((file) => file.endsWith('.json'));
+
+	const studies = files.map((file) => {
+		const fullPath = path.join(dir, file);
+		const raw = fs.readFileSync(fullPath, 'utf-8');
+		return JSON.parse(raw);
+	});
 
 	return { studies };
 };
