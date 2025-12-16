@@ -1,0 +1,38 @@
+{
+  "title": "Shopify Product Tagging Automation",
+  "slug": "shopify-product-tagging-automation",
+  "summary": "Automated product categorization and metadata tagging using NLP and Make.com workflows, eliminating repetitive manual tagging at scale.",
+  "tags": ["Automation", "E-commerce", "AI Tagging"],
+  "tools": ["Make.com", "Shopify API", "NLP"],
+  "thumbnail": "https://res.cloudinary.com/diyagxbvl/image/upload/v1765871151/shopify-auto-tagging_bx2bt1.png",
+  "problem": "Manual product tagging became increasingly inefficient as the product catalog grew. Inconsistent categories, missing metadata, and human error reduced storefront usability and slowed internal operations.",
+  "solution": "A Make.com automation workflow was built to analyze product titles and descriptions using NLP, classify items into structured categories, and apply standardized tags directly in Shopify. Fallback logic ensures stability when data is incomplete.",
+  "result": "Manual tagging was eliminated, category consistency improved, and product publishing became significantly faster. The system now scales automatically as inventory expands.",
+  "sections": [
+    {
+      "title": "Automation Flow Design",
+      "image": "https://res.cloudinary.com/diyagxbvl/image/upload/v1765871784/case-tagging1_uy5nzy.png",
+      "paragraphs": [
+        "The workflow begins by pulling product data from Shopify whenever a new item is created or updated.",
+        "Text fields are processed through an NLP-based classification step to determine relevant categories and attributes.",
+        "Tags are then normalized and pushed back into Shopify using the API, ensuring consistency across the catalog."
+      ]
+    },
+    {
+      "title": "Logic & Safeguards",
+      "image": null,
+      "paragraphs": [
+        "To prevent incorrect tagging, fallback rules were introduced when product descriptions lacked sufficient detail.",
+        "Manual override tags are respected, allowing operators to intervene without breaking the automation."
+      ]
+    },
+    {
+      "title": "Scalability & Maintenance",
+      "image": "https://res.cloudinary.com/diyagxbvl/image/upload/v1765871785/case-tagging2_ncwvi0.png",
+      "paragraphs": [
+        "The system was designed to handle thousands of products without performance degradation.",
+        "Classification logic can be updated centrally without modifying the Shopify storefront."
+      ]
+    }
+  ]
+}

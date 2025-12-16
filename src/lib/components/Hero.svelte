@@ -23,7 +23,7 @@
         </h1>
 
         <p class="text-soft text-xl md:text-2xl">
-          Smart systems. Clean logic. Engineered for scale.
+          Smart systems. Clean logic. Real Results.
         </p>
 
         <p class="text-soft text-lg leading-relaxed max-w-xl mt-2">

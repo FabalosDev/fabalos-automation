@@ -1,5 +1,4 @@
 <script>
-  import Footer from '$lib/components/Footer.svelte';
   export let data;
   const post = data.post;
 </script>
@@ -27,17 +26,17 @@
     {post.date} • {post.tags.join(" • ")}
   </p>
 
-  {#if post.heroImage}
+{#if post.heroImage}
+  <div class="blog-hero-wrap">
     <img
       src={post.heroImage}
       alt={post.title}
-      class="blog-hero"
-      loading="lazy"
+      loading="eager"
       decoding="async"
-      width="1200"
-      height="600"
     />
-  {/if}
+  </div>
+{/if}
+
 
 
   <!-- SECTION LOOP -->
@@ -76,8 +75,6 @@
   </a>
 
 </section>
-
-<Footer />
 
 <style>
 .blog-container {
@@ -137,4 +134,39 @@
   line-height: 1.72;
   font-size: 1rem;
 }
+
+.blog-container {
+  max-width: 820px;          /* keeps text readable */
+  margin: 0 auto;
+  padding: 3rem 1.2rem;
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+.blog-hero-wrap {
+  width: 100%;
+  margin: 2.5rem 0 3rem;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-hero-wrap img {
+  width: 100%;
+  height: auto;              /* 👈 SHOW FULL IMAGE */
+  display: block;
+  object-fit: cover;
+}
+
+/* optional soft glow */
+.blog-hero-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 40px rgba(255,140,0,0.12);
+}
+
 </style>

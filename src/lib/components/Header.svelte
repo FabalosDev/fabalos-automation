@@ -15,7 +15,8 @@
     { label: 'About', href: '#about' },
     { label: 'Case Study', href: '#case-study' },
     { label: 'Tech Stack', href: '#stack' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Contact', href: '#contact' },
+    { label: 'Links', href: '#links' }
   ];
 </script>
 

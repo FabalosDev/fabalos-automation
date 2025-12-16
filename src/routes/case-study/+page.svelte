@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Footer from '$lib/components/Footer.svelte';
 	export let data;
 
 	const studies = data.studies;
@@ -22,9 +21,23 @@
 <section class="section bg-background text-main">
 	<div class="stack container max-w-7xl space-y-6">
 
-		<h1 class="font-heading text-primary mb-12 text-center text-4xl">
+		<h1 class="font-heading text-primary text-center text-4xl">
 			Case Studies
 		</h1>
+
+<div class="mx-auto max-w-2xl text-center space-y-4">
+  <p class="text-soft text-lg leading-relaxed">
+    These case studies document real automation problems I’ve worked through —
+    from repetitive operational bottlenecks to scalable system design.
+  </p>
+
+  <p class="text-soft text-sm opacity-80">
+    Each case focuses on the <strong class="text-main">problem</strong>,
+    the <strong class="text-main">approach</strong>,
+    and the <strong class="text-main">result</strong> — not just the tools used.
+  </p>
+</div>
+
 
 		<!-- CARD GRID -->
 		<div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -64,7 +77,7 @@
 
 </section>
 
-<Footer />
+
 
 <style>
 .case-card {

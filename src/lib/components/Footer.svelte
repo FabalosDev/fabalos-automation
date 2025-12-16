@@ -6,7 +6,7 @@
 	import { Github, Linkedin } from 'lucide-svelte';
 </script>
 
-<footer class="bg-background border-border text-soft mt-12 border-t text-sm">
+<footer id="links" class="bg-background border-border text-soft mt-12 border-t text-sm">
 	<div
 		class="mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 py-8 text-center md:flex-row md:justify-between md:text-left"
 	>

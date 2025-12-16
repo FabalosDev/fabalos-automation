@@ -1,76 +1,99 @@
 <script>
-  import Footer from '$lib/components/Footer.svelte';
   export let data;
   const { category, posts } = data;
 </script>
 
 <svelte:head>
-  <title>{category} · Blog Category · Fabalos Automation</title>
+  <title>{category} · Blog · Fabalos Automation</title>
 
   <meta
     name="description"
-    content={`Articles under the "${category}" category — insights, systems, and automation stories from Fabalos Automation.`}
+    content={`Articles filed under "${category}" — automation insights, systems thinking, and engineering notes from Fabalos Automation.`}
   />
 
-  <meta property="og:title" content={`${category} · Blog Category`} />
-
+  <meta property="og:title" content={`${category} · Fabalos Blog`} />
   <meta
     property="og:description"
-    content={`Explore posts grouped under "${category}". Automation insights, engineering updates, and workflow breakdowns.`}
+    content={`Explore ${posts.length} article(s) under the "${category}" category.`}
   />
-
-  <meta
-    property="og:image"
-    content="/og-blog-category.png"
-  />
+  <meta property="og:image" content="/og-blog-category.png" />
 </svelte:head>
 
-<section class="container py-16">
+<section class="container section">
+  	<div class="stack container max-w-7xl space-y-6">
 
-  <h1 class="category-title">
-    Blog Category
-  </h1>
+  <!-- 🔹 Header -->
+  <header class="mb-10 max-w-3xl">
+    <p class="text-soft text-sm mb-1">Blog Category</p>
 
-  <h2 class="category-title">{category}</h2>
+    <h1 class="font-heading text-primary text-4xl mb-2">
+      {category}
+    </h1>
 
+    <p class="text-soft text-base">
+      {posts.length} article{posts.length === 1 ? '' : 's'} exploring
+      <strong class="text-main"> {category.toLowerCase()}</strong>,
+      system design, and automation insights.
+    </p>
+  </header>
+
+  <!-- 🔸 Empty State -->
   {#if posts.length === 0}
-    <p class="no-posts">No posts found in this category.</p>
+    <div class="bg-surface border-border rounded-xl border p-8 text-center text-soft">
+      <p class="mb-2">No posts found in this category.</p>
+      <p class="text-sm opacity-70">More articles will be added over time.</p>
+    </div>
   {:else}
 
+    <!-- 🔹 Grid -->
     <div class="grid-list">
       {#each posts as post}
-        <a class="blog-card" href={`/blog/${post.slug}`}>
+        <a
+          class="blog-card hover-lift"
+          href={`/blog/${post.slug}`}
+          aria-label={`Read ${post.title}`}
+        >
 
-  {#if post.heroImage}
-    <img
-      src={post.heroImage}
-      alt={post.title}
-      class="card-img"
-      loading="lazy"
-      decoding="async"
-      width="600"
-      height="350"
-    />
-  {/if}
+          {#if post.heroImage}
+            <img
+              src={post.heroImage}
+              alt={post.title}
+              class="card-img"
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="350"
+            />
+          {/if}
 
+          <div class="stack gap-1">
+            <h2 class="card-title">{post.title}</h2>
 
-          <h2 class="card-title">{post.title}</h2>
-          <p class="card-meta">{post.date}</p>
+            {#if post.date}
+              <p class="card-meta">{post.date}</p>
+            {/if}
 
-          <p class="card-tags">{post.tags.join(" • ")}</p>
+            {#if post.tags?.length}
+              <p class="card-tags">{post.tags.join(' • ')}</p>
+            {/if}
+          </div>
         </a>
       {/each}
     </div>
 
   {/if}
 
-  <a href="/blog" class="btn-primary mt-8 w-fit">
-    ← Back to Blog
-  </a>
-
+  <!-- 🔙 Back -->
+  <div class="mt-10">
+    <a href="/blog" class="btn-primary w-fit">
+      <span>← Back to Blog</span>
+    </a>
+  </div>
+</div>
 </section>
 
-<Footer />
+
+
 <style>
 .container {
   max-width: 1150px;
@@ -78,84 +101,29 @@
   padding: 3rem 1.2rem;
 }
 
-.category-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 0.25rem;
-}
-
-.sub-label {
-  opacity: 0.7;
-  margin-bottom: 2rem;
-  font-size: 1rem;
-}
-
-.no-posts {
-  opacity: 0.6;
-  padding: 1rem 0;
-}
-
 .grid-list {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  margin-bottom: 3rem;
 }
 
-/* Reuse blog-card styling from Blog Home for consistency */
+/* Blog Card */
 .blog-card {
   background: var(--surface);
   border-radius: 16px;
-  padding: 1.3rem;
-  border: 1px solid rgba(255,255,255,0.12);
-  transition: 0.25s ease;
-}
-
-.blog-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary);
-  box-shadow: 0 0 18px rgba(255,140,0,0.12);
-}
-
-.card-img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.card-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-}
-
-.card-meta {
-  opacity: 0.7;
-  margin-bottom: 0.4rem;
-}
-
-.card-tags {
-  opacity: 0.7;
-  font-size: 0.8rem;
-}
-
-.blog-card {
-  background: var(--surface);
   padding: 1.25rem;
-  border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.08);
-  transition: all 0.35s ease;
   position: relative;
   overflow: hidden;
+  transition: all 0.35s ease;
 }
 
-/* soft neon border highlight */
+/* Soft neon edge */
 .blog-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 16px;
+  border-radius: inherit;
   padding: 1px;
   background: linear-gradient(
     135deg,
@@ -163,20 +131,15 @@
     rgba(0,140,255,0.15)
   );
   -webkit-mask:
-     linear-gradient(#fff 0 0) content-box,
-     linear-gradient(#fff 0 0);
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
   opacity: 0;
-  transition: 0.35s ease;
+  transition: opacity 0.35s ease;
 }
 
-/* hover effect */
-.blog-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--primary);
-}
 .blog-card:hover::after {
   opacity: 1;
 }
@@ -186,28 +149,23 @@
   height: 180px;
   object-fit: cover;
   border-radius: 12px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .card-title {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  margin-bottom: 0.35rem;
 }
 
 .card-meta {
   font-size: 0.85rem;
   opacity: 0.7;
-  margin-bottom: 0.5rem;
 }
 
 .card-tags {
   font-size: 0.75rem;
   opacity: 0.75;
-}
-
-.category-title + .grid-list {
-  margin-top: 2rem;
 }
 
 </style>

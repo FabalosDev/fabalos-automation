@@ -5,7 +5,43 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) an
 
 ---
 
-# 📦 Change Log — v1.3.1: Fabalos Launch
+# 📦 Change Log — v1.3.2: Fabalos Automation
+
+## [1.3.2] — 2025-12-16
+
+### Content & Editorial Polish
+
+### Added
+
+- Editorial introduction for the **Blog landing page**
+
+- Contextual intro section for **Case Studies**
+
+- Dedicated hero image wrapper for blog posts
+
+- Clear category exploration affordances
+
+
+### Changed
+
+- Blog thumbnails resized to behave as true cards (not hero images)
+
+- Improved content width consistency across blog and case study pages
+
+- Refined typography flow and spacing for long-form reading
+
+- Updated call-to-action copy on case study cards
+
+
+### Fixed
+
+- Oversized blog thumbnails when only one post is present
+
+- Ambiguous category presentation that appeared as static text
+
+- Visual imbalance on large screens
+
+---
 
 ## 🔖 v1.3.1 – A refined, stable release focusing on UI consistency, performance optimization, and predictable layout behavior across all blog and case-study components.
 

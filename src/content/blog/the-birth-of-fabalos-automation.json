@@ -1,0 +1,28 @@
+{
+  "title": "The Birth of Fabalos Automation",
+  "slug": "the-birth-of-fabalos-automation",
+  "date": "2025-12-16",
+  "category": "Foundations",
+  "tags": ["Automation", "Systems Thinking", "Fabalos"],
+  "excerpt": "Fabalos Automation didn’t start as a company. It started as a pattern — a way of thinking about systems, logic, and work that kept repeating across industries.",
+  "heroImage": "https://res.cloudinary.com/diyagxbvl/image/upload/v1765871150/birth-of-fabalos-automation_uyqdzv.png",
+  "sections": [
+    {
+      "image": null,
+      "paragraph": "<p>Fabalos Automation wasn’t born from a single idea or product. It emerged from years of observing how systems fail when they grow without structure.</p><p>Across different industries and tools, the same issues kept appearing: repetitive work, fragile processes, and workflows held together by shortcuts.</p>"
+    },
+    {
+      "image": null,
+      "paragraph": "<p>Automation is often marketed as speed. In reality, speed is only a side effect.</p><p>The real value of automation is clarity — clear logic, predictable behavior, and systems that don’t collapse when conditions change.</p>"
+    },
+    {
+      "image": null,
+      "paragraph": "<p>With an engineering background, automation is treated as system design rather than tool usage.</p><p>Every workflow is built with failure modes, safeguards, and maintainability in mind. If a system cannot be explained simply, it is not finished.</p>"
+    },
+    {
+      "image": null,
+      "paragraph": "<p>Fabalos Automation exists to build systems that last.</p><p>The focus is eliminating unnecessary manual work while preserving control, clarity, and long-term trust in the automation.</p>"
+    }
+  ],
+  "footerNote": "<p><em>This is the foundation. Everything else builds on top of this.</em></p>"
+}
