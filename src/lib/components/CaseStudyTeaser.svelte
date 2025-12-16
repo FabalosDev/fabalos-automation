@@ -13,8 +13,8 @@
 			Featured Work
 		</h2>
 		<p class="text-soft mx-auto max-w-2xl text-center text-lg">
-			A curated selection of automation workflows I've engineered — highlighting practical systems
-			that improve operations, reduce manual load, and demonstrate scalable logic design.
+A curated selection of automation workflows and internal systems I've engineered —
+highlighting practical builds, content pipelines, and scalable logic design.
 		</p>
 
 		<!-- 🔸 Featured Work Grid -->
@@ -38,43 +38,42 @@
 					<li>✔️ 90% reduction in manual workload</li>
 				</ul>
 
-				<a
-					href="/images/case-tagging.png"
-					target="_blank"
-					rel="noopener"
-					class="btn-primary inline-flex"
-				>
-					<span>View Workflow</span>
-				</a>
+<a
+  href="https://www.fabalos.com/case-study/shopify-product-tagging-automation"
+  class="btn-primary inline-flex"
+>
+  <span>View Case Study</span>
+</a>
+
 			</div>
 
 			<!-- ⭐ Featured Work 2 -->
 <div class="bg-surface border-border rounded-xl border p-6 shadow card-hover transition hover:shadow-lg">
-				<h3 class="font-heading text-primary mb-3 text-2xl">
-					Instant AI Response System (Tally → n8n)
-				</h3>
+  <h3 class="font-heading text-primary mb-3 text-2xl">
+    Website Content Automation Pipeline
+  </h3>
 
-				<p class="text-soft mb-4 leading-relaxed">
-					A real-time response generator triggered through a Tally form — parsed, processed, and
-					returned in seconds using smart logic patterns. No GPT API required.
-				</p>
+  <p class="text-soft mb-4 leading-relaxed">
+    A version-controlled content automation system powering this website —
+    enabling structured publishing, instant rollback, and AI-assisted iteration
+    without relying on a traditional CMS.
+  </p>
 
-				<ul class="text-soft mb-4 space-y-1 text-sm">
-					<li>✔️ Tally form as the input frontend</li>
-					<li>✔️ Webhook → logic engine → dynamic formatter</li>
-					<li>✔️ Personalized response routing</li>
-					<li>✔️ Deployable via Railway or local tunnel</li>
-				</ul>
+  <ul class="text-soft mb-4 space-y-1 text-sm">
+    <li>✔️ JSON-driven blog & case study content</li>
+    <li>✔️ Automated save → commit workflow</li>
+    <li>✔️ Git-based versioning & recovery</li>
+    <li>✔️ AI-assisted content generation</li>
+  </ul>
 
-				<a
-					href="https://tally.so/r/your-form-id"
-					target="_blank"
-					rel="noopener"
-					class="btn-primary inline-flex"
-				>
-					<span>Try Demo</span>
-				</a>
-			</div>
+  <a
+    href="/blog"
+    class="btn-primary inline-flex"
+  >
+    <span>See It In Action</span>
+  </a>
+</div>
+
 		</div>
 
 		<!-- CTA -->

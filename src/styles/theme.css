@@ -1,6 +1,7 @@
 /* ===================== THEME.CSS ===================== */
 @layer base {
-  /* STATIC TOKENS (Tailwind reads these) */
+
+  /* ===================== TAILWIND TOKENS ===================== */
   @theme {
     --primary: var(--primary-color);
     --accent: var(--accent-color);
@@ -18,39 +19,47 @@
     --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   }
 
-/* ===================== FOXTHER COLOR SYSTEM ===================== */
+  /* ===================== FOXTHER COLOR SYSTEM ===================== */
 
-/* LIGHT MODE (default) */
-:root {
-  --primary-color: #ff7a45;       /* Foxther Orange */
-  --accent-color: #2dbb76;        /* Foxther Green */
-  --warning-color: #e6c152;
-  --error-color: #e86363;
-
-  --background-color: #f7f7f8;    /* soft neutral light bg */
-  --surface-color: #ffffff;       /* cards / panels */
-  --border-color: #e3e3e6;
-
-  --text-main-color: #1c1d21;     /* near-black text */
-  --text-soft-color: #4d5159;     /* muted gray text */
-}
-
-/* DARK MODE (system auto) */
-@media (prefers-color-scheme: dark) {
+  /* LIGHT MODE */
   :root {
-    --primary-color: #ff7a45;
-    --accent-color: #3dd68c;
+    --primary-color: #ff6a2a;
+    --accent-color: #1fa36b;
+    --warning-color: #d6b23f;
+    --error-color: #d94c4c;
 
-    --background-color: #0d0d0f;   /* Foxther dark matte */
-    --surface-color: #15161a;
-    --border-color: #2a2c31;
+    --background-color: #f5f6f8;
+    --surface-color: #ffffff;
+    --border-color: #d6d8dd;
 
-    --text-main-color: #e4e6eb;
-    --text-soft-color: #9aa0ab;
+  --text-main-color:  #0f1115;
+  --text-soft-color:  #2e3238;   /* darker */
+  --text-faint-color: #3f444b;   /* was too light before */
+
+
+    --footer-surface-color: #ffffff;
   }
-}
 
-  /* GLOBAL ELEMENT STYLES */
+  /* DARK MODE */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary-color: #ff7a45;
+      --accent-color: #3dd68c;
+
+      --background-color: #0d0d0f;
+      --surface-color: #15161a;
+      --border-color: #2a2c31;
+
+      --text-main-color: #e4e6eb;
+      --text-soft-color: #9aa0ab;
+      --text-faint-color: #7c828c;
+
+      --footer-surface-color: #0f1115;
+    }
+  }
+
+  /* ===================== GLOBAL ELEMENT STYLES ===================== */
+
   html {
     font-family: var(--font-body);
     color: var(--text-main);
@@ -58,9 +67,9 @@
   }
 
   body {
+    min-height: 100vh;
     background-color: var(--background);
     color: var(--text-main);
-    min-height: 100vh;
   }
 
   h1, h2, h3 {

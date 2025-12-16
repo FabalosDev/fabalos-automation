@@ -115,38 +115,55 @@
 /* ===================== FOOTER ELEMENTS ===================== */
 
 .powered-note {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: #999;
-  opacity: 0.85;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: opacity 0.2s ease;
+
+  font-size: 0.9rem;
+  line-height: 1.4;
+
+  color: var(--text-soft-color);
 }
-.powered-note:hover {
-  opacity: 1;
-  color: #ccc;
+
+/* Spark keeps accent */
+.powered-note .spark {
+  color: var(--primary-color);
 }
 
 .footer-powered {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 6px;
-  font-size: 0.85rem;
-  color: #aaa;
-  opacity: 0.9;
-  line-height: 1.4;
-  justify-content: center; /* ← THIS FIXES THE CENTERING */
-  text-align: center;
-  transition: opacity 0.25s ease;
-}
-.footer-powered:hover { opacity: 1; }
 
-.footer-powered .engine { font-weight: 600; color: #e4e4e4; }
-.footer-powered .brand { font-weight: 600; color: #ff7a1a; }
-.footer-powered .divider { opacity: 0.4; margin: 0 4px; }
+  font-size: 0.85rem;
+  line-height: 1.4;
+
+  /* Key fix */
+  color: var(--text-faint-color);
+}
+/* Secondary words */
+.footer-powered .label,
+.footer-powered .by {
+  color: var(--text-faint-color);
+}
+
+/* Divider stays subtle */
+.footer-powered .divider {
+  opacity: 0.4;
+}
+
+/* Emphasis */
+.footer-powered .engine {
+  color: var(--text-main-color);
+  font-weight: 500;
+}
+
+.footer-powered .brand {
+  color: var(--primary-color);
+  font-weight: 500;
+}
 
 
 /* ===================== SPARK ICON (Unified Version) ===================== */
@@ -206,15 +223,17 @@
 .footer-links {
   margin-top: 6px;
   font-size: 0.85rem;
-  color: #aaa;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
+
+  color: var(--text-faint-color);
 }
 
 .footer-a {
-  color: #bbb;
+  color: var(--text-soft-color);
+  font-weight: 500;
   transition: color 0.25s ease;
 }
 
@@ -223,13 +242,14 @@
 }
 
 .footer-links .link-label {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .footer-links .divider {
   opacity: 0.4;
   margin: 0 4px;
 }
+
 
 /* ===================== GLOW UTILITIES ===================== */
 
@@ -289,3 +309,39 @@
   transform: translateY(-4px);
 }
 
+/* ===================== FOOTER ===================== */
+
+footer {
+  color: var(--text-faint-color);
+  box-shadow: 0 -1px 0 var(--border-color);
+}
+
+footer strong,
+footer .engine,
+footer .brand {
+  color: var(--text-main-color);
+}
+
+footer .label,
+footer .by {
+  opacity: 0.85;
+}
+
+footer .footer-links,
+footer .footer-powered {
+  opacity: 0.95;
+}
+
+footer svg {
+  color: var(--text-soft-color);
+}
+
+.footer-a {
+  color: var(--text-soft-color);
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.footer-a:hover {
+  color: var(--primary-color);
+}
