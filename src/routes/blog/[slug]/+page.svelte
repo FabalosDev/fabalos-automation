@@ -1,7 +1,28 @@
-<script>
+<script lang="ts">
+  import { Share2, Linkedin, Twitter, Check } from 'lucide-svelte';
+
   export let data;
   const post = data.post;
+
+  let copied = false;
+  const url =
+    typeof window !== 'undefined' ? window.location.href : '';
+
+  async function share() {
+    if (navigator.share) {
+      await navigator.share({
+        title: post.title,
+        text: post.summary ?? '',
+        url
+      });
+    } else {
+      await navigator.clipboard.writeText(url);
+      copied = true;
+      setTimeout(() => (copied = false), 1500);
+    }
+  }
 </script>
+
 
 <svelte:head>
   <title>{post.seo?.title || `${post.title} · Blog · Fabalos Automation`}</title>
@@ -69,6 +90,43 @@
     </div>
   {/if}
 
+<div class="share-bar">
+
+  <!-- Native / fallback share -->
+  <button class="share-btn" on:click={share} aria-label="Share post">
+    {#if copied}
+      <Check size={16} />
+      Copied
+    {:else}
+      <Share2 size={16} />
+      Share
+    {/if}
+  </button>
+
+  <!-- LinkedIn -->
+  <a
+    class="share-btn"
+    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`}
+    target="_blank"
+    rel="noopener"
+    aria-label="Share on LinkedIn"
+  >
+    <Linkedin size={16} />
+    LinkedIn
+  </a>
+
+  <!-- X / Twitter -->
+  <a
+    class="share-btn"
+    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(post.title)}`}
+    target="_blank"
+    rel="noopener"
+    aria-label="Share on X"
+  >
+    <Twitter size={16} />
+    X
+  </a>
+</div>
 
   <a href="/blog" class="btn-primary mt-8 w-fit">
     <span>← Back to Blog</span>
@@ -168,5 +226,40 @@
   pointer-events: none;
   box-shadow: 0 0 40px rgba(255,140,0,0.12);
 }
+
+.share-bar {
+  margin-top: 3.5rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.share-label {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-right: 0.4rem;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  transition: all 0.2s ease;
+}
+
+.share-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: rgba(255, 140, 0, 0.06);
+}
+
 
 </style>

@@ -1,9 +1,10 @@
 <script>
+  import { Share2, Linkedin, Twitter } from 'lucide-svelte';
   export let data;
 
   // Incoming JSON
   const study = data.study;
-
+  const url = typeof window !== 'undefined' ? window.location.href : '';
   const {
     title,
     summary,
@@ -15,6 +16,16 @@
     result,
     sections = []
   } = study;
+
+async function share() {
+    if (navigator.share) {
+      await navigator.share({
+        title: study.title,
+        text: study.summary ?? '',
+        url
+      });
+    }
+  }
 </script>
 
 <svelte:head>
@@ -114,6 +125,35 @@
 
     </article>
   {/each}
+
+  <div class="share-bar">
+  <button class="share-btn" on:click={share} aria-label="Share">
+    <Share2 size={18} />
+    <span>Share</span>
+  </button>
+
+  <a
+    class="share-btn"
+    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`}
+    target="_blank"
+    rel="noopener"
+    aria-label="Share on LinkedIn"
+  >
+    <Linkedin size={18} />
+    <span>LinkedIn</span>
+  </a>
+
+  <a
+    class="share-btn"
+    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(study.title)}`}
+    target="_blank"
+    rel="noopener"
+    aria-label="Share on X"
+  >
+    <Twitter size={18} />
+    <span>X</span>
+  </a>
+</div>
 
   <a href="/case-study" class="btn-primary mt-10 w-fit">
     ← Back to Case Studies
@@ -321,6 +361,32 @@
 
 .glass-card:hover::before {
   opacity: 0.45;
+}
+
+.share-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--text-soft);
+  transition: all 0.2s ease;
+}
+
+.share-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: rgba(255, 140, 40, 0.08);
 }
 
 </style>
