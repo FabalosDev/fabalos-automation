@@ -1,38 +1,44 @@
 {
-  "title": "Shopify Product Tagging Automation",
-  "slug": "shopify-product-tagging-automation",
-  "summary": "Automated product categorization and metadata tagging using NLP and Make.com workflows, eliminating repetitive manual tagging at scale.",
-  "tags": ["Automation", "E-commerce", "AI Tagging"],
-  "tools": ["Make.com", "Shopify API", "NLP"],
-  "thumbnail": "https://res.cloudinary.com/diyagxbvl/image/upload/v1765871151/shopify-auto-tagging_bx2bt1.png",
-  "problem": "Manual product tagging became increasingly inefficient as the product catalog grew. Inconsistent categories, missing metadata, and human error reduced storefront usability and slowed internal operations.",
-  "solution": "A Make.com automation workflow was built to analyze product titles and descriptions using NLP, classify items into structured categories, and apply standardized tags directly in Shopify. Fallback logic ensures stability when data is incomplete.",
-  "result": "Manual tagging was eliminated, category consistency improved, and product publishing became significantly faster. The system now scales automatically as inventory expands.",
-  "sections": [
-    {
-      "title": "Automation Flow Design",
-      "image": "https://res.cloudinary.com/diyagxbvl/image/upload/v1765871784/case-tagging1_uy5nzy.png",
-      "paragraphs": [
-        "The workflow begins by pulling product data from Shopify whenever a new item is created or updated.",
-        "Text fields are processed through an NLP-based classification step to determine relevant categories and attributes.",
-        "Tags are then normalized and pushed back into Shopify using the API, ensuring consistency across the catalog."
-      ]
-    },
-    {
-      "title": "Logic & Safeguards",
-      "image": null,
-      "paragraphs": [
-        "To prevent incorrect tagging, fallback rules were introduced when product descriptions lacked sufficient detail.",
-        "Manual override tags are respected, allowing operators to intervene without breaking the automation."
-      ]
-    },
-    {
-      "title": "Scalability & Maintenance",
-      "image": "https://res.cloudinary.com/diyagxbvl/image/upload/v1765871785/case-tagging2_ncwvi0.png",
-      "paragraphs": [
-        "The system was designed to handle thousands of products without performance degradation.",
-        "Classification logic can be updated centrally without modifying the Shopify storefront."
-      ]
-    }
-  ]
+	"title": "Shopify Product Tagging Automation",
+	"slug": "shopify-product-tagging-automation",
+	"summary": "An automation system that classifies and tags Shopify products using NLP-driven logic, eliminating manual tagging while preserving operator control and long-term scalability.",
+	"tags": ["Automation", "E-commerce", "AI Tagging"],
+	"tools": ["Make.com", "Shopify API", "NLP"],
+	"thumbnail": "https://res.cloudinary.com/diyagxbvl/image/upload/v1765871151/shopify-auto-tagging_bx2bt1.png",
+
+	"problem": "As the Shopify product catalog expanded, manual tagging became a bottleneck. Categories were applied inconsistently, metadata quality varied between operators, and product publishing slowed as the catalog scaled. Native Shopify tagging offered limited automation and relied heavily on CSV-based workflows, which introduced friction and increased error rates.",
+
+	"solution": "A Make.com automation workflow was implemented to treat Shopify as both the trigger and the system of record. Product titles and descriptions are retrieved via the Shopify API and analyzed using NLP-based classification logic. Structured categories and normalized tags are generated automatically and written back into Shopify. Fallback rules and manual override handling ensure stability when product data is incomplete or requires human intervention.",
+
+	"result": "Manual tagging was effectively eliminated for the majority of products. Category consistency improved across the storefront, publishing time was reduced, and the system now scales automatically as inventory grows—without requiring changes to the Shopify storefront or re-importing CSV files.",
+
+	"sections": [
+		{
+			"title": "Automation Flow Design",
+			"image": "https://res.cloudinary.com/diyagxbvl/image/upload/v1765871784/case-tagging1_uy5nzy.png",
+			"paragraphs": [
+				"The automation is triggered whenever a product is created or updated in Shopify, ensuring tagging occurs in near real-time rather than as a batch operation.",
+				"Product titles, descriptions, and attributes are processed through an NLP-based classification step that determines relevant categories and tag candidates based on semantic meaning rather than fixed keyword rules.",
+				"Generated tags are normalized and written directly back into Shopify via the API, ensuring the storefront remains the single source of truth for product metadata."
+			]
+		},
+		{
+			"title": "Logic & Safeguards",
+			"image": null,
+			"paragraphs": [
+				"To prevent incorrect or incomplete tagging, fallback logic is applied when product descriptions lack sufficient detail or confidence thresholds are not met.",
+				"Manual override tags set within Shopify are respected by the automation, allowing operators to intervene or correct edge cases without disabling or modifying the workflow.",
+				"This balance ensures automation accelerates routine work while preserving human judgment where necessary."
+			]
+		},
+		{
+			"title": "Scalability & Maintenance",
+			"image": "https://res.cloudinary.com/diyagxbvl/image/upload/v1765871785/case-tagging2_ncwvi0.png",
+			"paragraphs": [
+				"The system was designed to handle thousands of products concurrently without performance degradation, leveraging modular workflow branching rather than linear processing.",
+				"As tagging rules evolve, classification logic can be updated centrally within the automation layer without modifying the Shopify storefront or reprocessing historical data.",
+				"This architecture allows the automation to grow alongside the business, accommodating larger catalogs, new product types, and evolving metadata requirements."
+			]
+		}
+	]
 }
