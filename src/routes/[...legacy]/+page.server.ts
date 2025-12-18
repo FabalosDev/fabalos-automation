@@ -12,7 +12,7 @@ export const load: PageServerLoad = ({ params }) => {
 	}
 
 	if (path === '/education') {
-		throw redirect(301, '/about');
+		throw redirect(301, '/#about');
 	}
 
 	// THIS will now render +error.svelte
