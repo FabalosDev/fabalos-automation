@@ -1,7 +1,7 @@
 {
   "title": "Editorial Content Pipeline Automation",
   "slug": "editorial-content-pipeline",
-  "excerpt": "A scalable automation system that ingests news articles, cleans and structures content, prevents duplicates, and prepares AI-ready drafts for editorial review.",
+  "summary": "A scalable automation system that ingests news articles, cleans and structures content, prevents duplicates, and prepares AI-ready drafts for editorial review.",
   "tags": [
     "Automation",
     "Editorial Systems",
@@ -21,29 +21,29 @@
   "sections": [
     {
       "title": "System Architecture",
-      "image": "",
+      "image": "https://res.cloudinary.com/diyagxbvl/image/upload/v1766162966/editorial_content_pipeline_sj0exg.png",
       "paragraphs": [
-        "The pipeline begins with scheduled scraping of news sources and RSS feeds.",
-        "Redirect URLs are resolved and normalized to ensure accurate source tracking.",
-        "Each article is assigned a unique UUID to prevent duplication across runs."
+        "The pipeline starts by regularly scraping selected news sources and RSS feeds, then consolidating everything into a single intake so editors no longer juggle multiple tabs or exports. Each story is normalized, with redirects resolved so tracking is tied to the real canonical URL, not temporary or shortened links. A unique UUID is attached to every article, preventing duplicates and giving downstream systems a stable reference for logs and analytics.",
+        "Behind this, the system is organized into modular services for fetching, parsing, enrichment, and storage instead of one monolithic script. That separation makes it easy to plug in new feeds, swap parsers, or update rules without breaking the whole pipeline. It also creates clear handoff points, so issues are easier to debug and performance bottlenecks are easier to spot.",
+        "All processed content flows into a structured data store that exposes consistent fields like source, topic, entities, and publication time. Editors and downstream tools can then filter and route content using this clean metadata rather than brittle text searches. The result is a predictable content backbone that supports dashboards, search, and future automation work with minimal rework."
       ]
     },
     {
       "title": "Automation Logic",
-      "image": "",
+      "image": "https://res.cloudinary.com/diyagxbvl/image/upload/v1766162856/automation_flow_irz0uk.png",
       "paragraphs": [
-        "Content is cleaned and parsed using structured logic blocks before AI processing.",
-        "AI is used only where it adds value — summarization, cleanup, and tagging — not as a blind replacement for logic.",
-        "Processed articles are stored in a structured sheet used as an editorial dashboard."
+        "Once content is ingested, it is broken into clear blocks—headline, summary, body, entities, and metadata—so automation can target specific pieces instead of treating an article as raw text. Rules handle tasks like language detection, category assignment, and basic quality checks before any AI is applied. This keeps noisy or off‑topic items from flowing further into the system.",
+        "AI is used selectively where it adds obvious value: generating concise summaries, cleaning up structure, and suggesting tags or angles. It is not used as a black box decision‑maker; guardrails and business rules still define what gets published and how. Editors retain control over final wording, framing, and standards, with AI acting as an assistant rather than a replacement.",
+        "After processing, enriched articles are written into a structured dashboard view for the editorial team. Each row represents a story with its summary, tags, and key metrics ready for quick scanning. Editors can accept, tweak, or discard AI suggestions in a few clicks, keeping the workflow fast without sacrificing oversight."
       ]
     },
     {
       "title": "Editorial Impact",
-      "image": "",
+      "image": "https://res.cloudinary.com/diyagxbvl/image/upload/v1766163157/editorial-dashboard_dxuklk.png",
       "paragraphs": [
-        "Editors receive clean, consistent see-first views with hidden system metadata.",
-        "Articles can be regenerated or refined without breaking the original source data.",
-        "The system scales horizontally by simply adding new sources."
+        "For editors, the biggest change is that every draft now arrives pre‑cleaned, summarized, and tagged instead of as messy copy that needs heavy manual work. Routine tasks like fixing URLs, reformatting text, and creating short abstracts are handled before a human even opens the story. This shifts time toward judgment calls—angle, context, and verification—rather than repetitive production chores.",
+        "Because the pipeline preserves raw source data alongside structured outputs, articles can be regenerated in different formats without redoing the entire process. Editors can request shorter briefs, alternative headlines, or new angles and have them produced quickly from the same underlying record. This makes experimentation with new sections, newsletters, or regional editions far less risky.",
+        "The overall effect is a calmer, more scalable editorial operation where teams can handle more stories with the same headcount. New beats or sources are added by configuring feeds and rules instead of building parallel, manual workflows. The system gives the newsroom a repeatable way to grow coverage while keeping quality and brand voice under editorial control."
       ]
     }
   ],
@@ -53,5 +53,5 @@
     "ogImage": "https://res.cloudinary.com/diyagxbvl/image/upload/v1766122268/Editorial_Content_Pipeline_yjqflh.png"
   },
   "created_at": "2025-12-19T05:28:50.983815+00:00",
-  "updated_at": "2025-12-19T16:06:18.451Z"
+  "updated_at": "2025-12-19T17:12:59.682Z"
 }
