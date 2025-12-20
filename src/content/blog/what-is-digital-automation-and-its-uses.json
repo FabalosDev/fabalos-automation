@@ -28,7 +28,7 @@
     },
     {
       "image": null,
-      "paragraph": "<p><h2>When You Shouldn’t Automate</h2>\n\n<ul>\n  <li>When processes are unclear or constantly changing</li>\n  <li>When human judgment is required at every step</li>\n  <li>When tasks are rare or one-off</li>\n  <li>When inputs are unreliable</li>\n</ul>\n\n<p><strong>Bad automation scales bad processes faster.</strong></p>\n\n<hr />\n\n<h2>The Real Value of Digital Automation</h2>\n\n<p>The biggest benefit isn’t speed — it’s consistency.</p>\n\n<ul>\n  <li>Fewer errors</li>\n  <li>Enforced standards</li>\n  <li>Preserved institutional knowledge</li>\n  <li>Scalable workflows without burnout</li>\n</ul>\n\n<p>Automation frees humans to focus on strategy, creativity, and decision-making.</p>\n\n<hr /></p>"
+      "paragraph": "<p>Digital automation works best when it supports repeatable processes and removes low-value manual work.\n\n1. Content and editorial workflows  \nAutomation can quietly handle the preparation work, such as scraping articles and RSS feeds, removing duplicates, cleaning formatting and links, and structuring drafts for editors. Editors can then focus on judgment and storytelling rather than data cleanup.\n\n2. Operations and administrative tasks  \nCommon examples include invoice routing and approvals, client status updates, scheduled reports, and deadline or SLA reminders.\n\n3. Data synchronization  \nAutomation excels at keeping CRMs and spreadsheets in sync, pushing form submissions into databases, and syncing e-commerce platforms with analytics tools.\n\n4. Monitoring and alerts  \nSystems can monitor health, detect errors, flag broken links or missing assets, and notify teams when jobs fail or queues become stuck.\n</p>"
     },
     {
       "image": null,
@@ -50,5 +50,5 @@
     "ogImage": "https://res.cloudinary.com/diyagxbvl/image/upload/v1766173338/fabalos-automation-futuristic-work_itqg0w.png"
   },
   "created_at": "2025-12-19T19:45:26.065117+00:00",
-  "updated_at": "2025-12-20T07:47:02.849Z"
+  "updated_at": "2025-12-20T08:05:31.630Z"
 }
