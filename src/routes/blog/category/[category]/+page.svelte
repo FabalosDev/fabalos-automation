@@ -54,16 +54,16 @@
       href={`/blog/${post.slug}`}
       aria-label={`Read ${post.title}`}
     >
+{#if post.thumbnail || post.heroImage}
+  <img
+    src={post.thumbnail || post.heroImage}
+    alt={post.title}
+    class="case-thumb"
+    loading="lazy"
+    decoding="async"
+  />
+{/if}
 
-      {#if post.heroImage}
-        <img
-          src={post.heroImage}
-          alt={post.title}
-          class="case-thumb"
-          loading="lazy"
-          decoding="async"
-        />
-      {/if}
 
       <h2 class="case-title">{post.title}</h2>
 
