@@ -28,7 +28,7 @@
 		property="og:description"
 		content="I build resilient systems using Make, GPT, and n8n. Automation with clarity, purpose, and soul."
 	/>
-	<meta property="og:image" content="https://fabalos.com/og-image.png" />
+	<meta property="og:image" content="https://fabalos.com/fabalos-og-image.png" />
 
 	<!-- 🐦 Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
@@ -38,7 +38,7 @@
 		name="twitter:description"
 		content="I build resilient systems using Make, GPT, and n8n. Automation with clarity, purpose, and soul."
 	/>
-	<meta name="twitter:image" content="https://fabalos.com/og-image.png" />
+	<meta name="twitter:image" content="https://fabalos.com/fabalos-og-image.png" />
 
 	<!-- 🔖 Favicons & PWA -->
 	<link rel="icon" href="/favicon.ico" sizes="any" />

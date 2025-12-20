@@ -25,7 +25,7 @@
 		property="og:description"
 		content="I design and automate workflows using n8n, Make.com, and GPT — delivering clean logic, scalable systems, and real operational results."
 	/>
-	<meta property="og:image" content="https://fabalos.com/meta/fabalos-og.png" />
+	<meta property="og:image" content="https://fabalos.com/meta/fabalos-og-image.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 
@@ -36,7 +36,7 @@
 		name="twitter:description"
 		content="Automation Systems Architect specializing in n8n, Make.com, and AI-driven workflow automation."
 	/>
-	<meta name="twitter:image" content="https://fabalos.com/meta/fabalos-og.png" />
+	<meta name="twitter:image" content="https://fabalos.com/meta/fabalos-og-image.png" />
 
 	<!-- 🌟 STRUCTURED DATA (JSON-LD) -->
 	<script type="application/ld+json">
