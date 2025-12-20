@@ -52,15 +52,16 @@
   {#each data.posts as post}
     <a class="case-card blog hover-lift" href={`/blog/${post.slug}`}>
 
-      {#if post.heroImage}
-        <img
-          src={post.heroImage}
-          alt={post.title}
-          class="case-thumb"
-          loading="lazy"
-          decoding="async"
-        />
-      {/if}
+{#if post.thumbnail}
+  <img
+    src={post.thumbnail}
+    alt={post.title}
+    class="case-thumb"
+    loading="lazy"
+    decoding="async"
+  />
+{/if}
+
 
       <h2 class="case-title">{post.title}</h2>
 
