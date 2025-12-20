@@ -40,7 +40,7 @@
 </svelte:head>
 
 
-<section class="blog-container">
+<section class="blog-container section">
   <h1 class="blog-title">{post.title}</h1>
 
   <p class="blog-meta">
@@ -62,25 +62,30 @@
 
   <!-- SECTION LOOP -->
   {#each post.sections as sec}
-    <article class="blog-section">
+<article class="blog-section">
 
-      {#if sec.image}
-        <img
-          src={sec.image}
-          alt={sec.title || 'section image'}
-          class="section-image"
-          loading="lazy"
-          decoding="async"
-          width="1200"
-          height="600"
-        />
-      {/if}
+  {#if sec.title}
+    <h2 class="section-title">{sec.title}</h2>
+  {/if}
 
-      <div class="section-text">
-        {@html sec.paragraph}
-      </div>
+  {#if sec.image}
+    <img
+      src={sec.image}
+      alt={sec.title || 'section image'}
+      class="section-image"
+      loading="lazy"
+      decoding="async"
+      width="1200"
+      height="600"
+    />
+  {/if}
 
-    </article>
+  <div class="section-text">
+    {@html sec.paragraph}
+  </div>
+
+</article>
+
   {/each}
 
 
@@ -135,13 +140,18 @@
 </section>
 
 <style>
+/* =========================
+   BLOG CONTAINER
+========================= */
 .blog-container {
   max-width: 830px;
   margin: 0 auto;
-  padding: 3.5rem 1.2rem;
-  padding-bottom: 5rem; /* add this */
+  padding: 3.5rem 1.2rem 5rem;
 }
 
+/* =========================
+   TITLE & META
+========================= */
 .blog-title {
   font-size: 2.6rem;
   font-weight: 700;
@@ -152,51 +162,6 @@
 .blog-meta {
   opacity: 0.75;
   margin-bottom: 2.2rem;
-}
-
-/* HERO IMAGE */
-.blog-hero {
-  width: 100%;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 2.8rem;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-
-/* SECTIONS */
-.blog-section {
-  margin-bottom: 3.4rem;
-}
-
-.section-image {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1.2rem;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-
-.section-text {
-  font-size: 1.14rem;
-  line-height: 1.78;
-  opacity: 0.92;
-}
-
-/* FOOTER NOTE */
-.footer-block {
-  margin-top: 3.2rem;
-  padding: 1.6rem;
-  background: rgba(255,255,255,0.04);
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
-  line-height: 1.72;
-  font-size: 1rem;
-}
-
-.blog-container {
-  max-width: 820px;          /* keeps text readable */
-  margin: 0 auto;
-  padding: 3rem 1.2rem;
 }
 
 /* =========================
@@ -212,12 +177,11 @@
 
 .blog-hero-wrap img {
   width: 100%;
-  height: auto;              /* 👈 SHOW FULL IMAGE */
+  height: auto;
   display: block;
   object-fit: cover;
 }
 
-/* optional soft glow */
 .blog-hero-wrap::after {
   content: "";
   position: absolute;
@@ -227,6 +191,61 @@
   box-shadow: 0 0 40px rgba(255,140,0,0.12);
 }
 
+/* =========================
+   BLOG SECTIONS (STRUCTURE)
+========================= */
+.blog-section {
+  margin: 4rem 0;
+}
+
+.blog-section:first-child {
+  margin-top: 2rem;
+}
+
+/* Optional subtle divider between sections */
+.blog-section + .blog-section {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 3rem;
+}
+
+/* =========================
+   SECTION CONTENT
+========================= */
+.section-image {
+  width: 100%;
+  border-radius: 12px;
+  margin: 3rem 0 1.8rem;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* THIS IS THE IMPORTANT PART */
+.section-text p {
+  font-size: 1.14rem;
+  line-height: 1.78;
+  opacity: 0.92;
+  margin-bottom: 1.4rem;
+}
+
+.section-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   FOOTER NOTE
+========================= */
+.footer-block {
+  margin-top: 3.2rem;
+  padding: 1.6rem;
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  line-height: 1.72;
+  font-size: 1rem;
+}
+
+/* =========================
+   SHARE BAR
+========================= */
 .share-bar {
   margin-top: 3.5rem;
   padding-top: 1.8rem;
@@ -235,12 +254,6 @@
   align-items: center;
   gap: 0.8rem;
   flex-wrap: wrap;
-}
-
-.share-label {
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin-right: 0.4rem;
 }
 
 .share-btn {
@@ -258,8 +271,7 @@
 .share-btn:hover {
   color: var(--primary);
   border-color: var(--primary);
-  background: rgba(255, 140, 0, 0.06);
+  background: rgba(255,140,0,0.06);
 }
-
 
 </style>
