@@ -262,8 +262,6 @@ async function share() {
     line-height: 1.6;
   }
 
-
-
   /* SECTIONS */
   .section-card {
     margin: 3rem 0;
@@ -287,9 +285,6 @@ async function share() {
     line-height: 1.75;
     font-size: 1.05rem;
   }
-
-
-
 
   /* --------------------------------------------------
    FOXOPS GLOW AESTHETIC  (Global Case Study Upgrade)

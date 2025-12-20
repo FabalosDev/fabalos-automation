@@ -45,41 +45,47 @@
     </div>
   {:else}
 
-    <!-- 🔹 Grid -->
-    <div class="grid-list">
-      {#each posts as post}
-        <a
-          class="blog-card hover-lift"
-          href={`/blog/${post.slug}`}
-          aria-label={`Read ${post.title}`}
-        >
+<!-- 🔹 Grid -->
+<div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
 
-          {#if post.heroImage}
-            <img
-              src={post.heroImage}
-              alt={post.title}
-              class="card-img"
-              loading="lazy"
-              decoding="async"
-              width="600"
-              height="350"
-            />
-          {/if}
+  {#each posts as post}
+    <a
+      class="case-card blog hover-lift"
+      href={`/blog/${post.slug}`}
+      aria-label={`Read ${post.title}`}
+    >
 
-          <div class="stack gap-1">
-            <h2 class="card-title">{post.title}</h2>
+      {#if post.heroImage}
+        <img
+          src={post.heroImage}
+          alt={post.title}
+          class="case-thumb"
+          loading="lazy"
+          decoding="async"
+        />
+      {/if}
 
-            {#if post.date}
-              <p class="card-meta">{post.date}</p>
-            {/if}
+      <h2 class="case-title">{post.title}</h2>
 
-            {#if post.tags?.length}
-              <p class="card-tags">{post.tags.join(' • ')}</p>
-            {/if}
-          </div>
-        </a>
-      {/each}
-    </div>
+      {#if post.date}
+        <p class="text-sm opacity-70">{post.date}</p>
+      {/if}
+
+      {#if post.tags?.length}
+        <div class="case-tags">
+          {#each post.tags as tag}
+            <span class="case-tag">{tag}</span>
+          {/each}
+        </div>
+      {/if}
+
+      <span class="case-more">Read Article →</span>
+
+    </a>
+  {/each}
+
+</div>
+
 
   {/if}
 
@@ -92,8 +98,6 @@
 </div>
 </section>
 
-
-
 <style>
 .container {
   max-width: 1150px;
@@ -101,71 +105,25 @@
   padding: 3rem 1.2rem;
 }
 
-.grid-list {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+/* =========================
+   CATEGORY BLOCK
+========================= */
+.category-block {
+  margin-bottom: 2.5rem;
 }
 
-/* Blog Card */
-.blog-card {
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 1.25rem;
-  border: 1px solid rgba(255,255,255,0.08);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.35s ease;
-}
-
-/* Soft neon edge */
-.blog-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(
-    135deg,
-    rgba(255,140,40,0.2),
-    rgba(0,140,255,0.15)
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.blog-card:hover::after {
-  opacity: 1;
-}
-
-.card-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 0.9rem;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.card-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-}
-
-.card-meta {
+.section-label {
   font-size: 0.85rem;
-  opacity: 0.7;
+  opacity: 0.6;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.card-tags {
-  font-size: 0.75rem;
-  opacity: 0.75;
+.category-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 </style>

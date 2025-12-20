@@ -19,53 +19,70 @@
   <p class="section-label">Explore by category</p>
 
   <div class="category-list">
-    {#each Object.keys(data.categories).sort() as cat}
-      <a
-        href={`/blog/category/${cat}`}
-        class="cat-pill"
-        aria-label={`View posts in ${cat}`}
-      >
-        #{cat}
-      </a>
-    {/each}
+
+    {#if data.posts.length === 0}
+  <div class="bg-surface border-border rounded-xl border p-10 text-center text-soft">
+    <p class="mb-2">No blog posts yet.</p>
+    <p class="text-sm opacity-70">
+      New automation notes will appear here soon.
+    </p>
   </div>
-</div>
-
-
-  <!-- 📰 Posts -->
-<div class="blog-grid-wrapper">
-  <div class="grid-list">
-
-    {#each data.posts as post}
-      <a class="blog-card hover-lift" href={`/blog/${post.slug}`}>
-
-{#if post.heroImage}
-  <div class="thumb">
-    <img
-      src={post.heroImage}
-      alt={post.title}
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+{:else}
+  <!-- grid here -->
 {/if}
 
+{#each Object.entries(data.categories).sort(([a], [b]) => a.localeCompare(b)) as [cat, posts]}
+  <a
+    href={`/blog/category/${cat}`}
+    class="cat-pill"
+    aria-label={`View posts in ${cat}`}
+  >
+    #{cat}
+    <span class="opacity-60 ml-1">({posts.length})</span>
+  </a>
+{/each}
 
-        <div class="card-body">
-          <h2 class="card-title">{post.title}</h2>
-
-          {#if post.date}
-            <p class="card-meta">{post.date}</p>
-          {/if}
-
-          {#if post.tags?.length}
-            <p class="card-tags">{post.tags.join(' • ')}</p>
-          {/if}
-        </div>
-      </a>
-    {/each}
   </div>
 </div>
+
+
+<!-- 📰 Posts -->
+<div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+
+  {#each data.posts as post}
+    <a class="case-card blog hover-lift" href={`/blog/${post.slug}`}>
+
+      {#if post.heroImage}
+        <img
+          src={post.heroImage}
+          alt={post.title}
+          class="case-thumb"
+          loading="lazy"
+          decoding="async"
+        />
+      {/if}
+
+      <h2 class="case-title">{post.title}</h2>
+
+      {#if post.date}
+        <p class="text-sm opacity-70">{post.date}</p>
+      {/if}
+
+      {#if post.tags?.length}
+        <div class="case-tags">
+          {#each post.tags as tag}
+            <span class="case-tag">{tag}</span>
+          {/each}
+        </div>
+      {/if}
+
+      <span class="case-more">Read Article →</span>
+
+    </a>
+  {/each}
+
+</div>
+
 
 
   <!-- 🔙 Back -->
@@ -74,9 +91,9 @@
       <span>← Back to Homepage</span>
     </a>
   </div>
+
 </div>
 </section>
-
 
 
 <style>
@@ -102,41 +119,6 @@
   opacity: 0.75;
 }
 
-/* =========================
-   CATEGORY BLOCK
-========================= */
-.category-block {
-  margin-bottom: 2.5rem;
-}
-
-.section-label {
-  font-size: 0.85rem;
-  opacity: 0.6;
-  margin-bottom: 0.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.category-list {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-/* =========================
-   BLOG CARD BODY
-========================= */
-.card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.blog-grid-wrapper {
-  max-width: 1050px;   /* slightly narrower than container */
-  margin-top: 2.5rem;
-}
-
 .cat-pill {
   padding: 6px 14px;
   border-radius: 999px;
@@ -154,22 +136,6 @@
   background: rgba(255,140,0,0.12);
   box-shadow: 0 0 12px rgba(255,140,0,0.18);
   transform: translateY(-1px);
-}
-
-.thumb {
-  width: 100%;
-  max-width: 360px;       /* 👈 THIS controls thumbnail size */
-  aspect-ratio: 16 / 9;   /* keeps it editorial */
-  overflow: hidden;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 </style>
